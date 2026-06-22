@@ -1,0 +1,262 @@
+{
+  "site": {
+    "name": "FAiAgent",
+    "tagline": "AI Chatbot WhatsApp untuk Bisnis Anda",
+    "phone": "+62 812-3456-7890",
+    "email": "hello@faiagent.id",
+    "address": "Jakarta, Indonesia"
+  },
+  "nav": {
+    "links": [
+      {
+        "label": "Fitur",
+        "href": "/fitur"
+      },
+      {
+        "label": "Integrasi",
+        "href": "/integrasi"
+      },
+      {
+        "label": "Harga",
+        "href": "/harga"
+      },
+      {
+        "label": "Tentang Kami",
+        "href": "/tentang"
+      },
+      {
+        "label": "Kontak",
+        "href": "/kontak"
+      }
+    ],
+    "ctaLabel": "Coba Gratis"
+  },
+  "home": {
+    "hero": {
+      "badge": "Didukung AI Generatif Terbaru",
+      "title": "AI Chatbot WhatsApp yang Membalas Pelanggan Secepat Kilat",
+      "subtitle": "FAiAgent membantu bisnis Anda membalas chat WhatsApp otomatis 24/7 dengan AI, tanpa kehilangan sentuhan personal. Tingkatkan penjualan, kurangi beban tim CS.",
+      "ctaPrimary": "Mulai Gratis 14 Hari",
+      "ctaSecondary": "Lihat Demo",
+      "stat1Value": "2.000+",
+      "stat1Label": "Bisnis Terhubung",
+      "stat2Value": "<5 detik",
+      "stat2Label": "Waktu Respons AI",
+      "stat3Value": "98%",
+      "stat3Label": "Kepuasan Pelanggan"
+    },
+    "logosTitle": "Dipercaya oleh tim CS & sales dari berbagai industri",
+    "features": {
+      "title": "Semua yang Anda Butuhkan dalam Satu Chatbot WhatsApp",
+      "subtitle": "Dari auto-reply hingga AI yang memahami konteks percakapan pelanggan Anda.",
+      "items": [
+        {
+          "title": "Balasan Otomatis AI",
+          "desc": "AI memahami pertanyaan pelanggan dan membalas secara natural, mirip manusia, 24 jam nonstop."
+        },
+        {
+          "title": "Knowledge Base Bisnis",
+          "desc": "Latih AI dengan data produk, FAQ, dan SOP bisnis Anda sendiri agar jawaban selalu akurat."
+        },
+        {
+          "title": "Handover ke Agent",
+          "desc": "Saat percakapan butuh sentuhan manusia, AI otomatis mengalihkan ke tim CS yang tepat."
+        },
+        {
+          "title": "Broadcast & Follow-up",
+          "desc": "Kirim promo, reminder, dan follow-up otomatis ke pelanggan sesuai segmentasi."
+        },
+        {
+          "title": "Dashboard Analitik",
+          "desc": "Pantau jumlah chat, waktu respons, dan performa AI dalam satu dashboard real-time."
+        },
+        {
+          "title": "Multi-Agent & Tim",
+          "desc": "Kelola banyak agent CS dalam satu inbox WhatsApp terpadu tanpa tabrakan balasan."
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "Cara Kerja FAiAgent",
+      "subtitle": "Hanya 3 langkah sederhana untuk mulai otomatisasi WhatsApp Anda.",
+      "steps": [
+        {
+          "title": "Hubungkan Nomor WhatsApp",
+          "desc": "Integrasikan akun WhatsApp Business API Anda ke FAiAgent dalam hitungan menit."
+        },
+        {
+          "title": "Latih AI Anda",
+          "desc": "Masukkan data produk, FAQ, dan gaya komunikasi brand Anda ke knowledge base."
+        },
+        {
+          "title": "AI Mulai Membalas",
+          "desc": "AI otomatis menjawab chat pelanggan, dan tim Anda fokus ke hal yang lebih penting."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Apa Kata Pelanggan Kami",
+      "items": [
+        {
+          "quote": "Sejak pakai FAiAgent, respons chat WhatsApp kami jadi instan dan penjualan naik signifikan.",
+          "name": "Dewi Anggraini",
+          "role": "Owner, Toko Fashion Online"
+        },
+        {
+          "quote": "Tim CS kami jadi jauh lebih efisien karena pertanyaan repetitif sudah dijawab AI.",
+          "name": "Budi Santoso",
+          "role": "CS Manager, Startup Logistik"
+        },
+        {
+          "quote": "Setup-nya mudah, AI-nya cukup pintar memahami konteks pelanggan kami.",
+          "name": "Rina Putri",
+          "role": "Marketing Lead, Klinik Kecantikan"
+        }
+      ]
+    },
+    "ctaBanner": {
+      "title": "Siap Otomatisasi WhatsApp Bisnis Anda?",
+      "subtitle": "Coba FAiAgent gratis 14 hari, tanpa kartu kredit.",
+      "ctaLabel": "Mulai Sekarang"
+    }
+  },
+  "fitur": {
+    "hero": {
+      "title": "Fitur AI Agent untuk WhatsApp",
+      "subtitle": "FAiAgent menggabungkan kekuatan AI generatif dengan otomatisasi WhatsApp Business API untuk pengalaman pelanggan terbaik."
+    },
+    "sections": [
+      {
+        "title": "AI yang Memahami Konteks",
+        "desc": "Berbeda dari chatbot berbasis keyword, AI kami memahami maksud dan konteks percakapan pelanggan sehingga balasan terasa natural."
+      },
+      {
+        "title": "Knowledge Base Mudah Diatur",
+        "desc": "Unggah dokumen produk, FAQ, atau katalog Anda. AI otomatis belajar dan menjawab berdasarkan data tersebut."
+      },
+      {
+        "title": "Handover Otomatis ke Manusia",
+        "desc": "Ketika AI mendeteksi kebutuhan khusus atau komplain sensitif, percakapan langsung dialihkan ke agent manusia."
+      },
+      {
+        "title": "Broadcast Pesan Tersegmentasi",
+        "desc": "Kirim pesan promo atau reminder ke segmen pelanggan tertentu sesuai histori chat dan transaksi."
+      },
+      {
+        "title": "Laporan & Analitik Real-time",
+        "desc": "Pantau performa AI, jumlah percakapan, dan tingkat kepuasan pelanggan dari dashboard terpusat."
+      }
+    ]
+  },
+  "integrasi": {
+    "hero": {
+      "title": "Integrasi WhatsApp Business API",
+      "subtitle": "Hubungkan FAiAgent dengan WhatsApp resmi dan tools bisnis favorit Anda."
+    },
+    "channels": [
+      {
+        "name": "WhatsApp Business API",
+        "desc": "Channel utama FAiAgent, resmi dan terverifikasi."
+      },
+      {
+        "name": "Instagram DM",
+        "desc": "Kelola pesan Instagram dalam inbox yang sama."
+      },
+      {
+        "name": "Webhook & API",
+        "desc": "Hubungkan ke sistem internal atau CRM Anda sendiri."
+      },
+      {
+        "name": "Google Sheets",
+        "desc": "Sinkronisasi data pelanggan dan order otomatis."
+      }
+    ]
+  },
+  "harga": {
+    "hero": {
+      "title": "Harga Sederhana, Manfaat Maksimal",
+      "subtitle": "Pilih paket yang sesuai dengan skala bisnis Anda. Upgrade atau downgrade kapan saja."
+    },
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "Rp 299rb",
+        "period": "/bulan",
+        "desc": "Untuk bisnis kecil yang baru mulai otomatisasi WhatsApp.",
+        "features": [
+          "1 Nomor WhatsApp",
+          "1.000 percakapan AI/bulan",
+          "Knowledge base dasar",
+          "1 Agent"
+        ],
+        "cta": "Pilih Starter",
+        "highlight": false
+      },
+      {
+        "name": "Growth",
+        "price": "Rp 799rb",
+        "period": "/bulan",
+        "desc": "Untuk bisnis yang sedang berkembang dengan volume chat tinggi.",
+        "features": [
+          "3 Nomor WhatsApp",
+          "10.000 percakapan AI/bulan",
+          "Knowledge base lanjutan",
+          "5 Agent",
+          "Broadcast tersegmentasi"
+        ],
+        "cta": "Pilih Growth",
+        "highlight": true
+      },
+      {
+        "name": "Enterprise",
+        "price": "Custom",
+        "period": "",
+        "desc": "Untuk perusahaan dengan kebutuhan skala besar & kustom.",
+        "features": [
+          "Nomor WhatsApp tak terbatas",
+          "Percakapan AI tak terbatas",
+          "Integrasi API kustom",
+          "Agent tak terbatas",
+          "Dedicated support"
+        ],
+        "cta": "Hubungi Sales",
+        "highlight": false
+      }
+    ]
+  },
+  "tentang": {
+    "hero": {
+      "title": "Tentang FAiAgent",
+      "subtitle": "Kami membangun FAiAgent untuk membantu bisnis Indonesia memberikan layanan pelanggan terbaik melalui WhatsApp dengan kekuatan AI."
+    },
+    "mission": {
+      "title": "Misi Kami",
+      "desc": "Membuat AI chatbot WhatsApp yang mudah digunakan, terjangkau, dan benar-benar membantu bisnis tumbuh, dari UMKM hingga enterprise."
+    },
+    "stats": [
+      {
+        "value": "2.000+",
+        "label": "Bisnis Pengguna"
+      },
+      {
+        "value": "10 Juta+",
+        "label": "Percakapan Dilayani"
+      },
+      {
+        "value": "2024",
+        "label": "Tahun Berdiri"
+      }
+    ]
+  },
+  "kontak": {
+    "hero": {
+      "title": "Hubungi Kami",
+      "subtitle": "Punya pertanyaan atau ingin demo langsung? Tim kami siap membantu."
+    },
+    "formTitle": "Kirim Pesan"
+  },
+  "footer": {
+    "desc": "FAiAgent adalah platform AI chatbot WhatsApp untuk membantu bisnis Anda melayani pelanggan lebih cepat dan efisien.",
+    "copyright": "© 2026 FAiAgent. Seluruh hak cipta dilindungi."
+  }
+}
