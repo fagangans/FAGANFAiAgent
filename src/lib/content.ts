@@ -1,20 +1,28 @@
-import fs from "node:fs/promises";
-import path from "node:path";
 import defaultContent from "@/data/content.json";
+import { supabase, CONTENT_ROW_ID } from "@/lib/supabase";
 
 export type SiteContent = typeof defaultContent;
 
-const CONTENT_PATH = path.join(process.cwd(), "src", "data", "content.json");
-
 export async function getContent(): Promise<SiteContent> {
-  try {
-    const raw = await fs.readFile(CONTENT_PATH, "utf-8");
-    return JSON.parse(raw) as SiteContent;
-  } catch {
+  const { data, error } = await supabase
+    .from("site_content")
+    .select("data")
+    .eq("id", CONTENT_ROW_ID)
+    .maybeSingle();
+
+  if (error || !data) {
     return defaultContent as SiteContent;
   }
+
+  return data.data as SiteContent;
 }
 
 export async function saveContent(content: SiteContent): Promise<void> {
-  await fs.writeFile(CONTENT_PATH, JSON.stringify(content, null, 2), "utf-8");
+  const { error } = await supabase
+    .from("site_content")
+    .upsert({ id: CONTENT_ROW_ID, data: content, updated_at: new Date().toISOString() });
+
+  if (error) {
+    throw new Error(error.message);
+  }
 }
