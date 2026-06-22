@@ -2,7 +2,16 @@ import Link from "next/link";
 import { getContent } from "@/lib/content";
 import Reveal from "@/components/Reveal";
 import ChatMockup from "@/components/ChatMockup";
-import { iconForIndex } from "@/components/icons";
+import DashboardMock from "@/components/DashboardMock";
+import { iconForIndex, CheckIcon } from "@/components/icons";
+import { CHANNELS } from "@/components/BrandLogos";
+import { STEP_ILLUSTRATIONS, AiReplyIllustration } from "@/components/Illustrations";
+
+const showcasePoints = [
+  "Balasan kontekstual yang terdengar manusiawi",
+  "Eskalasi otomatis ke agen saat dibutuhkan",
+  "Laporan performa real-time di satu dashboard",
+];
 
 const marqueeItems = [
   "E-Commerce",
@@ -110,6 +119,91 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Channels */}
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <Reveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold text-slate-900">Satu AI untuk Semua Channel Chat</h2>
+            <p className="mt-4 text-slate-600">
+              Hubungkan WhatsApp dan kanal favorit pelanggan Anda — semua percakapan dibalas otomatis dari satu tempat.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6">
+          {CHANNELS.map((ch, idx) => (
+            <Reveal key={ch.name} delay={idx * 70}>
+              <div className="group flex flex-col items-center gap-3 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg">
+                <span className={`${ch.color} transition duration-300 group-hover:scale-110`}>
+                  <ch.Logo className="h-9 w-9" />
+                </span>
+                <span className="text-sm font-medium text-slate-600">{ch.name}</span>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Showcase — dashboard */}
+      <section className="bg-slate-50 py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
+          <Reveal>
+            <div>
+              <span className="inline-block rounded-full bg-emerald-100 px-4 py-1 text-sm font-medium text-emerald-700">
+                Dashboard Analitik
+              </span>
+              <h2 className="mt-5 text-3xl font-bold text-slate-900">
+                Pantau Semua Percakapan dalam Satu Layar
+              </h2>
+              <p className="mt-4 text-slate-600">
+                Lihat jumlah chat masuk, tingkat balasan AI, dan konversi penjualan secara real-time. Ambil
+                keputusan berdasarkan data, bukan tebakan.
+              </p>
+              <ul className="mt-6 space-y-3">
+                {showcasePoints.map((point) => (
+                  <li key={point} className="flex items-start gap-3 text-slate-700">
+                    <CheckIcon className="mt-0.5 h-5 w-5 flex-none text-emerald-500" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+          <Reveal delay={150}>
+            <DashboardMock />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Showcase — AI reply */}
+      <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
+        <Reveal className="lg:order-2">
+          <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-50 to-teal-50 p-6">
+            <AiReplyIllustration className="h-full w-full" />
+          </div>
+        </Reveal>
+        <Reveal delay={150} className="lg:order-1">
+          <div>
+            <span className="inline-block rounded-full bg-emerald-100 px-4 py-1 text-sm font-medium text-emerald-700">
+              AI Generatif
+            </span>
+            <h2 className="mt-5 text-3xl font-bold text-slate-900">
+              Membalas Pelanggan 24/7, Secepat Kilat
+            </h2>
+            <p className="mt-4 text-slate-600">
+              AI memahami maksud pelanggan dan menjawab dengan natural — dari tanya stok, harga, hingga
+              membuatkan link pembayaran. Tim Anda cukup fokus pada hal yang benar-benar penting.
+            </p>
+            <Link
+              href="/fitur"
+              className="mt-6 inline-block rounded-full bg-emerald-500 px-7 py-3 text-base font-semibold text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-emerald-600 hover:shadow-lg"
+            >
+              Lihat Semua Fitur
+            </Link>
+          </div>
+        </Reveal>
+      </section>
+
       {/* Features */}
       <section className="mx-auto max-w-7xl px-6 py-20">
         <Reveal>
@@ -148,17 +242,23 @@ export default async function HomePage() {
           </Reveal>
 
           <div className="mt-14 grid gap-8 md:grid-cols-3">
-            {howItWorks.steps.map((step, idx) => (
-              <Reveal key={step.title} delay={idx * 120}>
-                <div className="relative rounded-2xl bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500 text-sm font-bold text-white">
-                    {idx + 1}
+            {howItWorks.steps.map((step, idx) => {
+              const Illustration = STEP_ILLUSTRATIONS[idx % STEP_ILLUSTRATIONS.length];
+              return (
+                <Reveal key={step.title} delay={idx * 120}>
+                  <div className="relative overflow-hidden rounded-2xl bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+                    <div className="overflow-hidden rounded-xl bg-emerald-50/50">
+                      <Illustration className="h-40 w-full" />
+                    </div>
+                    <div className="mt-5 flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500 text-sm font-bold text-white">
+                      {idx + 1}
+                    </div>
+                    <h3 className="mt-4 text-lg font-semibold text-slate-900">{step.title}</h3>
+                    <p className="mt-2 text-sm text-slate-600">{step.desc}</p>
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-slate-900">{step.title}</h3>
-                  <p className="mt-2 text-sm text-slate-600">{step.desc}</p>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
