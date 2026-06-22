@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getContent } from "@/lib/content";
 import Reveal from "@/components/Reveal";
+import ChatMockup from "@/components/ChatMockup";
+import { iconForIndex } from "@/components/icons";
 
 export default async function HomePage() {
   const content = await getContent();
@@ -19,46 +21,52 @@ export default async function HomePage() {
           className="animate-float absolute -right-24 top-32 h-80 w-80 rounded-full bg-emerald-300/30 blur-3xl"
         />
 
-        <div className="relative mx-auto max-w-5xl px-6 py-20 text-center">
-          <Reveal>
-            <span className="inline-block rounded-full bg-emerald-100 px-4 py-1 text-sm font-medium text-emerald-700">
-              {hero.badge}
-            </span>
-          </Reveal>
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center">
+          <div className="text-center lg:text-left">
+            <Reveal>
+              <span className="inline-block rounded-full bg-emerald-100 px-4 py-1 text-sm font-medium text-emerald-700">
+                {hero.badge}
+              </span>
+            </Reveal>
 
-          <Reveal delay={100}>
-            <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-              {hero.title}
-            </h1>
-          </Reveal>
+            <Reveal delay={100}>
+              <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+                {hero.title}
+              </h1>
+            </Reveal>
 
-          <Reveal delay={200}>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">{hero.subtitle}</p>
-          </Reveal>
+            <Reveal delay={200}>
+              <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600 lg:mx-0">{hero.subtitle}</p>
+            </Reveal>
 
-          <Reveal delay={300}>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/kontak"
-                className="rounded-full bg-emerald-500 px-7 py-3 text-base font-semibold text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-emerald-600 hover:shadow-lg"
-              >
-                {hero.ctaPrimary}
-              </Link>
-              <Link
-                href="/fitur"
-                className="rounded-full border border-slate-200 bg-white px-7 py-3 text-base font-semibold text-slate-700 transition duration-300 hover:-translate-y-0.5 hover:border-emerald-300 hover:text-emerald-600"
-              >
-                {hero.ctaSecondary}
-              </Link>
-            </div>
-          </Reveal>
+            <Reveal delay={300}>
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+                <Link
+                  href="/kontak"
+                  className="rounded-full bg-emerald-500 px-7 py-3 text-base font-semibold text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-emerald-600 hover:shadow-lg"
+                >
+                  {hero.ctaPrimary}
+                </Link>
+                <Link
+                  href="/fitur"
+                  className="rounded-full border border-slate-200 bg-white px-7 py-3 text-base font-semibold text-slate-700 transition duration-300 hover:-translate-y-0.5 hover:border-emerald-300 hover:text-emerald-600"
+                >
+                  {hero.ctaSecondary}
+                </Link>
+              </div>
+            </Reveal>
 
-          <Reveal delay={400}>
-            <div className="mx-auto mt-16 grid max-w-2xl grid-cols-3 gap-6 border-t border-slate-200 pt-10">
-              <Stat value={hero.stat1Value} label={hero.stat1Label} />
-              <Stat value={hero.stat2Value} label={hero.stat2Label} />
-              <Stat value={hero.stat3Value} label={hero.stat3Label} />
-            </div>
+            <Reveal delay={400}>
+              <div className="mx-auto mt-16 grid max-w-2xl grid-cols-3 gap-6 border-t border-slate-200 pt-10 lg:mx-0">
+                <Stat value={hero.stat1Value} label={hero.stat1Label} />
+                <Stat value={hero.stat2Value} label={hero.stat2Label} />
+                <Stat value={hero.stat3Value} label={hero.stat3Label} />
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={250} className="lg:order-2">
+            <ChatMockup />
           </Reveal>
         </div>
       </section>
@@ -80,17 +88,20 @@ export default async function HomePage() {
         </Reveal>
 
         <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {features.items.map((item, idx) => (
-            <Reveal key={item.title} delay={idx * 80}>
-              <div className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 transition duration-300 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white">
-                  ✓
+          {features.items.map((item, idx) => {
+            const Icon = iconForIndex(idx);
+            return (
+              <Reveal key={item.title} delay={idx * 80}>
+                <div className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 transition duration-300 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-slate-900">{item.title}</h3>
+                  <p className="mt-2 text-sm text-slate-600">{item.desc}</p>
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-2 text-sm text-slate-600">{item.desc}</p>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
       </section>
 
@@ -131,9 +142,14 @@ export default async function HomePage() {
             <Reveal key={t.name} delay={idx * 100}>
               <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
                 <p className="text-sm text-slate-600">&ldquo;{t.quote}&rdquo;</p>
-                <div className="mt-4">
-                  <p className="text-sm font-semibold text-slate-900">{t.name}</p>
-                  <p className="text-xs text-slate-500">{t.role}</p>
+                <div className="mt-4 flex items-center gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-100 text-sm font-semibold text-emerald-700">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-slate-900">{t.name}</p>
+                    <p className="text-xs text-slate-500">{t.role}</p>
+                  </div>
                 </div>
               </div>
             </Reveal>

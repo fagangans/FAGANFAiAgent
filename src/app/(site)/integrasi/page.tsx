@@ -1,5 +1,6 @@
 import { getContent } from "@/lib/content";
 import Reveal from "@/components/Reveal";
+import { iconForIndex } from "@/components/icons";
 
 export default async function IntegrasiPage() {
   const content = await getContent();
@@ -22,17 +23,20 @@ export default async function IntegrasiPage() {
 
       <section className="mx-auto max-w-5xl px-6 py-20">
         <div className="grid gap-6 sm:grid-cols-2">
-          {channels.map((channel, idx) => (
-            <Reveal key={channel.name} delay={idx * 80}>
-              <div className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 transition duration-300 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white">
-                  ⚡
+          {channels.map((channel, idx) => {
+            const Icon = iconForIndex(idx);
+            return (
+              <Reveal key={channel.name} delay={idx * 80}>
+                <div className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 transition duration-300 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-slate-900">{channel.name}</h3>
+                  <p className="mt-2 text-sm text-slate-600">{channel.desc}</p>
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-slate-900">{channel.name}</h3>
-                <p className="mt-2 text-sm text-slate-600">{channel.desc}</p>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
       </section>
     </>

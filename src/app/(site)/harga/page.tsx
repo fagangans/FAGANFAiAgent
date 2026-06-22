@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getContent } from "@/lib/content";
 import Reveal from "@/components/Reveal";
+import { CheckIcon } from "@/components/icons";
 
 export default async function HargaPage() {
   const content = await getContent();
@@ -51,7 +52,9 @@ export default async function HargaPage() {
                         plan.highlight ? "text-emerald-50" : "text-slate-600"
                       }`}
                     >
-                      <span>✓</span>
+                      <CheckIcon
+                        className={`mt-0.5 h-4 w-4 flex-none ${plan.highlight ? "text-white" : "text-emerald-500"}`}
+                      />
                       {feature}
                     </li>
                   ))}
