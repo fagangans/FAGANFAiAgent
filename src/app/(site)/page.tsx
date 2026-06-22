@@ -4,6 +4,17 @@ import Reveal from "@/components/Reveal";
 import ChatMockup from "@/components/ChatMockup";
 import { iconForIndex } from "@/components/icons";
 
+const marqueeItems = [
+  "E-Commerce",
+  "Fashion & Retail",
+  "Kuliner & F&B",
+  "Properti",
+  "Klinik & Kesehatan",
+  "Pendidikan",
+  "Travel & Tour",
+  "Otomotif",
+];
+
 export default async function HomePage() {
   const content = await getContent();
   const { hero, logosTitle, features, howItWorks, testimonials, ctaBanner } = content.home;
@@ -14,17 +25,22 @@ export default async function HomePage() {
       <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white">
         <div
           aria-hidden
-          className="animate-float-slow absolute -left-24 top-10 h-72 w-72 rounded-full bg-emerald-200/40 blur-3xl"
+          className="animate-drift absolute -left-24 top-10 h-72 w-72 rounded-full bg-emerald-200/50 blur-3xl"
         />
         <div
           aria-hidden
-          className="animate-float absolute -right-24 top-32 h-80 w-80 rounded-full bg-emerald-300/30 blur-3xl"
+          className="animate-drift-rev absolute -right-24 top-32 h-80 w-80 rounded-full bg-teal-300/40 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="animate-float-slow absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-emerald-100/60 blur-3xl"
         />
 
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center">
           <div className="text-center lg:text-left">
             <Reveal>
-              <span className="inline-block rounded-full bg-emerald-100 px-4 py-1 text-sm font-medium text-emerald-700">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1 text-sm font-medium text-emerald-700">
+                <span className="animate-soft-pulse h-2 w-2 rounded-full bg-emerald-500" />
                 {hero.badge}
               </span>
             </Reveal>
@@ -72,10 +88,26 @@ export default async function HomePage() {
       </section>
 
       {/* Logos */}
-      <section className="border-y border-slate-100 bg-white py-8">
+      <section className="overflow-hidden border-y border-slate-100 bg-white py-8">
         <Reveal>
           <p className="text-center text-sm font-medium text-slate-400">{logosTitle}</p>
         </Reveal>
+        <div className="group relative mt-6 flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+          <div className="animate-marquee flex shrink-0 items-center gap-12 pr-12">
+            {marqueeItems.map((label, i) => (
+              <span key={`a-${i}`} className="whitespace-nowrap text-base font-semibold text-slate-400">
+                {label}
+              </span>
+            ))}
+          </div>
+          <div aria-hidden className="animate-marquee flex shrink-0 items-center gap-12 pr-12">
+            {marqueeItems.map((label, i) => (
+              <span key={`b-${i}`} className="whitespace-nowrap text-base font-semibold text-slate-400">
+                {label}
+              </span>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Features */}

@@ -1,6 +1,6 @@
 export default function ChatMockup() {
   return (
-    <div className="mx-auto w-full max-w-sm rounded-[2rem] border border-slate-200 bg-white p-2 shadow-2xl">
+    <div className="animate-float-slow mx-auto w-full max-w-sm rounded-[2rem] border border-slate-200 bg-white p-2 shadow-2xl">
       <div className="overflow-hidden rounded-[1.6rem] bg-[#e5ddd5]">
         <div className="flex items-center gap-3 bg-emerald-600 px-4 py-3">
           <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/20 text-sm font-bold text-white">
@@ -8,7 +8,10 @@ export default function ChatMockup() {
           </div>
           <div>
             <p className="text-sm font-semibold text-white">FAiAgent Bot</p>
-            <p className="text-[11px] text-emerald-100">online</p>
+            <p className="flex items-center gap-1.5 text-[11px] text-emerald-100">
+              <span className="animate-soft-pulse h-1.5 w-1.5 rounded-full bg-emerald-300" />
+              online
+            </p>
           </div>
         </div>
 
