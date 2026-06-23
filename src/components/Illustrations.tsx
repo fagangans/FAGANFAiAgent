@@ -73,6 +73,34 @@ export function LaunchIllustration({ className = "h-40 w-full" }: Props) {
 
 export const STEP_ILLUSTRATIONS = [ConnectIllustration, TrainIllustration, LaunchIllustration];
 
+/* About page — growth / mission illustration */
+export function GrowthIllustration({ className = "h-full w-full" }: Props) {
+  return (
+    <svg viewBox="0 0 400 280" className={className} role="img" aria-label="Pertumbuhan bisnis bersama FAiAgent">
+      <defs>
+        <linearGradient id="growth" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#34d399" />
+          <stop offset="1" stopColor="#0d9488" />
+        </linearGradient>
+      </defs>
+      <rect x="20" y="20" width="360" height="240" rx="24" fill="#ecfdf5" />
+      <path d="M60 210V150M120 210V120M180 210V90M240 210V60M300 210V100" stroke="#a7f3d0" strokeWidth="22" strokeLinecap="round" />
+      <path
+        d="M50 150 L120 110 L180 80 L240 50 L310 90"
+        stroke="url(#growth)"
+        strokeWidth="6"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="240" cy="50" r="10" fill="url(#growth)" />
+      <circle cx="120" cy="170" r="16" fill="#fff" stroke="#34d399" strokeWidth="3" />
+      <circle cx="280" cy="190" r="16" fill="#fff" stroke="#34d399" strokeWidth="3" />
+      <circle cx="200" cy="200" r="16" fill="#fff" stroke="#34d399" strokeWidth="3" />
+    </svg>
+  );
+}
+
 /* Big feature showcase illustration (AI replying) */
 export function AiReplyIllustration({ className = "h-full w-full" }: Props) {
   return (
