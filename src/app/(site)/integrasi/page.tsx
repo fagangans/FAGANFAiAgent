@@ -1,10 +1,11 @@
 import { getContent } from "@/lib/content";
 import Reveal from "@/components/Reveal";
-import { WhatsAppLogo, InstagramLogo } from "@/components/BrandLogos";
-import { LinkIcon, ChartIcon } from "@/components/icons";
+import { InstagramLogo } from "@/components/BrandLogos";
+import { LinkIcon, ChartIcon, CheckIcon } from "@/components/icons";
+import ChatMockup from "@/components/ChatMockup";
+import WebWidgetMock from "@/components/WebWidgetMock";
 
 const CHANNEL_VISUALS = [
-  { Logo: WhatsAppLogo, color: "text-[#25D366]" },
   { Logo: InstagramLogo, color: "text-[#E1306C]" },
   { Logo: LinkIcon, color: "text-orange-600" },
   { Logo: ChartIcon, color: "text-amber-600" },
@@ -12,7 +13,8 @@ const CHANNEL_VISUALS = [
 
 export default async function IntegrasiPage() {
   const content = await getContent();
-  const { hero, channels } = content.integrasi;
+  const { hero, highlights, channels } = content.integrasi;
+  const [whatsappHighlight, websiteHighlight] = highlights;
 
   return (
     <>
@@ -29,8 +31,64 @@ export default async function IntegrasiPage() {
         </Reveal>
       </section>
 
-      <section className="mx-auto max-w-5xl px-6 py-20">
-        <div className="grid gap-6 sm:grid-cols-2">
+      {/* Highlight: WhatsApp */}
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <Reveal>
+            <div>
+              <span className="inline-block rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-sm font-medium text-orange-700">
+                {whatsappHighlight.tag}
+              </span>
+              <h2 className="mt-5 text-3xl font-bold text-slate-900">{whatsappHighlight.name}</h2>
+              <p className="mt-4 text-slate-600">{whatsappHighlight.desc}</p>
+              <ul className="mt-6 space-y-3">
+                {whatsappHighlight.bullets.map((bullet) => (
+                  <li key={bullet} className="flex items-start gap-3 text-slate-700">
+                    <CheckIcon className="mt-0.5 h-5 w-5 flex-none text-orange-500" />
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+          <Reveal delay={150}>
+            <ChatMockup />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Highlight: Website */}
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <Reveal className="lg:order-2">
+            <div>
+              <span className="inline-block rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-sm font-medium text-orange-700">
+                {websiteHighlight.tag}
+              </span>
+              <h2 className="mt-5 text-3xl font-bold text-slate-900">{websiteHighlight.name}</h2>
+              <p className="mt-4 text-slate-600">{websiteHighlight.desc}</p>
+              <ul className="mt-6 space-y-3">
+                {websiteHighlight.bullets.map((bullet) => (
+                  <li key={bullet} className="flex items-start gap-3 text-slate-700">
+                    <CheckIcon className="mt-0.5 h-5 w-5 flex-none text-orange-500" />
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+          <Reveal delay={150} className="lg:order-1">
+            <WebWidgetMock />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Secondary channels */}
+      <section className="mx-auto max-w-5xl px-6 py-16">
+        <Reveal>
+          <h2 className="text-center text-2xl font-bold text-slate-900">Integrasi Tambahan</h2>
+        </Reveal>
+        <div className="mt-10 grid gap-6 sm:grid-cols-3">
           {channels.map((channel, idx) => {
             const visual = CHANNEL_VISUALS[idx % CHANNEL_VISUALS.length];
             const Icon = visual.Logo;

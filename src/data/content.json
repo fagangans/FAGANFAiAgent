@@ -205,14 +205,32 @@
   },
   "integrasi": {
     "hero": {
-      "title": "Integrasi WhatsApp Business API",
-      "subtitle": "Hubungkan FAiAgent dengan WhatsApp resmi dan tools bisnis favorit Anda."
+      "title": "Chatbot untuk WhatsApp dan Website Anda",
+      "subtitle": "Dua kanal utama tempat pelanggan Anda bertanya, satu sistem AI yang sama di belakangnya."
     },
-    "channels": [
+    "highlights": [
       {
-        "name": "WhatsApp Business API",
-        "desc": "Channel utama FAiAgent, resmi dan terverifikasi."
+        "name": "Chatbot WhatsApp",
+        "tag": "Kanal Utama",
+        "desc": "Terhubung langsung ke WhatsApp Business API resmi. Chat pelanggan dijawab otomatis, broadcast terjadwal, dan tim Anda bisa kelola semuanya dari satu nomor.",
+        "bullets": [
+          "Nomor WhatsApp Business API resmi & terverifikasi",
+          "Broadcast dan follow-up otomatis ke pelanggan",
+          "Beberapa agent bisa membalas dari satu inbox yang sama"
+        ]
       },
+      {
+        "name": "Chatbot Website",
+        "tag": "Widget Live Chat",
+        "desc": "Pasang widget chat di website Anda dalam hitungan menit. Jawab pertanyaan pengunjung sebelum mereka sempat menutup tab.",
+        "bullets": [
+          "Tinggal tempel satu baris kode ke website Anda",
+          "Warna dan gaya widget mengikuti brand Anda",
+          "Histori chat pengunjung tersimpan otomatis"
+        ]
+      }
+    ],
+    "channels": [
       {
         "name": "Instagram DM",
         "desc": "Kelola pesan Instagram dalam inbox yang sama."
