@@ -2,19 +2,42 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { SiteContent } from "@/lib/content";
 import { MenuIcon, CloseIcon } from "./icons";
 
 export default function Navbar({ content }: { content: SiteContent }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const ticking = useRef(false);
+
+  useEffect(() => {
+    function onScroll() {
+      if (ticking.current) return;
+      ticking.current = true;
+      requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 24);
+        ticking.current = false;
+      });
+    }
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const links = [{ label: "Home", href: "/" }, ...content.nav.links];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+    <header className="sticky top-0 z-50 px-0 pt-0 transition-all duration-300 sm:px-4 sm:pt-3">
+      <nav
+        className={`mx-auto flex max-w-7xl items-center justify-between px-6 py-4 transition-all duration-300 ${
+          scrolled
+            ? "sm:rounded-2xl border border-white/60 bg-white/70 shadow-lg shadow-slate-900/5 backdrop-blur-xl"
+            : "border-b border-transparent bg-white/0 backdrop-blur-0"
+        }`}
+      >
         <Link href="/" className="flex items-center gap-2 text-xl font-bold text-slate-900">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-500 text-white">
             F
@@ -61,7 +84,7 @@ export default function Navbar({ content }: { content: SiteContent }) {
       </nav>
 
       {open && (
-        <div className="border-t border-slate-100 bg-white px-6 py-4 md:hidden">
+        <div className="mx-auto max-w-7xl border-t border-slate-100 bg-white/95 px-6 py-4 shadow-lg backdrop-blur-xl sm:rounded-b-2xl md:hidden">
           <div className="flex flex-col gap-1">
             {links.map((link) => {
               const isActive = pathname === link.href;
