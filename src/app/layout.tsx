@@ -9,9 +9,9 @@ const jakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "FAiAgent - AI Chatbot WhatsApp untuk Bisnis Anda",
+  title: "FAiAgent - Chatbot WhatsApp untuk Bisnis Anda",
   description:
-    "FAiAgent membantu bisnis Anda membalas chat WhatsApp otomatis 24/7 dengan AI, tanpa kehilangan sentuhan personal.",
+    "FAiAgent menjawab chat WhatsApp pelanggan Anda sepanjang hari, dengan gaya bicara yang masih terasa seperti tim Anda sendiri.",
 };
 
 export default function RootLayout({

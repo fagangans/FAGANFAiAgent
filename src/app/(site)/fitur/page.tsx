@@ -18,7 +18,7 @@ export default async function FiturPage() {
         <div className="relative mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-2 lg:items-center">
           <Reveal>
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl font-bold text-slate-900">{hero.title}</h1>
+              <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">{hero.title}</h1>
               <p className="mt-4 text-lg text-slate-600">{hero.subtitle}</p>
             </div>
           </Reveal>

@@ -14,7 +14,7 @@ export default async function KontakPage() {
       />
       <Reveal>
         <div className="relative mx-auto max-w-2xl px-6 text-center">
-          <h1 className="text-4xl font-bold text-slate-900">{hero.title}</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">{hero.title}</h1>
           <p className="mt-4 text-lg text-slate-600">{hero.subtitle}</p>
         </div>
       </Reveal>

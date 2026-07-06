@@ -37,9 +37,9 @@
   },
   "home": {
     "hero": {
-      "badge": "Didukung AI Generatif Terbaru",
-      "title": "AI Chatbot WhatsApp yang Membalas Pelanggan Secepat Kilat",
-      "subtitle": "FAiAgent membantu bisnis Anda membalas chat WhatsApp otomatis 24/7 dengan AI, tanpa kehilangan sentuhan personal. Tingkatkan penjualan, kurangi beban tim CS.",
+      "badge": "Chatbot WhatsApp, bukan sekadar auto-reply",
+      "title": "Balas Chat WhatsApp Pelanggan dalam Hitungan Detik",
+      "subtitle": "FAiAgent menjawab pertanyaan pelanggan di WhatsApp sepanjang hari, dengan gaya bicara yang masih terasa seperti tim Anda sendiri — bukan robot yang kaku.",
       "ctaPrimary": "Mulai Gratis 14 Hari",
       "ctaSecondary": "Lihat Demo",
       "stat1Value": "2.000+",
@@ -52,49 +52,49 @@
     "logosTitle": "Dipercaya oleh tim CS & sales dari berbagai industri",
     "features": {
       "title": "Semua yang Anda Butuhkan dalam Satu Chatbot WhatsApp",
-      "subtitle": "Dari auto-reply hingga AI yang memahami konteks percakapan pelanggan Anda.",
+      "subtitle": "Bukan cuma balas otomatis — sistem yang benar-benar mengerti apa yang pelanggan Anda maksud.",
       "items": [
         {
-          "title": "Balasan Otomatis AI",
-          "desc": "AI memahami pertanyaan pelanggan dan membalas secara natural, mirip manusia, 24 jam nonstop."
+          "title": "Balasan yang Terasa Personal",
+          "desc": "Pelanggan bertanya, sistem langsung menjawab sesuai konteks obrolan — bukan template kaku yang itu-itu saja."
         },
         {
           "title": "Knowledge Base Bisnis",
-          "desc": "Latih AI dengan data produk, FAQ, dan SOP bisnis Anda sendiri agar jawaban selalu akurat."
+          "desc": "Unggah katalog produk, daftar FAQ, atau SOP layanan Anda — jawabannya mengikuti data itu, bukan asal tebak."
         },
         {
           "title": "Handover ke Agent",
-          "desc": "Saat percakapan butuh sentuhan manusia, AI otomatis mengalihkan ke tim CS yang tepat."
+          "desc": "Untuk keluhan atau permintaan khusus, percakapan otomatis dialihkan ke tim CS tanpa pelanggan harus mengulang cerita."
         },
         {
           "title": "Broadcast & Follow-up",
-          "desc": "Kirim promo, reminder, dan follow-up otomatis ke pelanggan sesuai segmentasi."
+          "desc": "Kirim promo atau pengingat ke grup pelanggan tertentu, tanpa harus kirim satu per satu secara manual."
         },
         {
           "title": "Dashboard Analitik",
-          "desc": "Pantau jumlah chat, waktu respons, dan performa AI dalam satu dashboard real-time."
+          "desc": "Lihat jumlah chat masuk, kecepatan balasan, dan performa tim dalam satu tampilan yang selalu ter-update."
         },
         {
           "title": "Multi-Agent & Tim",
-          "desc": "Kelola banyak agent CS dalam satu inbox WhatsApp terpadu tanpa tabrakan balasan."
+          "desc": "Beberapa anggota tim bisa membalas dari satu nomor WhatsApp yang sama, tanpa saling tumpang tindih."
         }
       ]
     },
     "howItWorks": {
       "title": "Cara Kerja FAiAgent",
-      "subtitle": "Hanya 3 langkah sederhana untuk mulai otomatisasi WhatsApp Anda.",
+      "subtitle": "Tiga langkah, dan WhatsApp bisnis Anda sudah berjalan otomatis.",
       "steps": [
         {
           "title": "Hubungkan Nomor WhatsApp",
-          "desc": "Integrasikan akun WhatsApp Business API Anda ke FAiAgent dalam hitungan menit."
+          "desc": "Sambungkan nomor WhatsApp Business API Anda ke FAiAgent — prosesnya cuma beberapa menit."
         },
         {
-          "title": "Latih AI Anda",
-          "desc": "Masukkan data produk, FAQ, dan gaya komunikasi brand Anda ke knowledge base."
+          "title": "Masukkan Data Bisnis Anda",
+          "desc": "Unggah info produk, FAQ, dan gaya bicara brand Anda supaya jawabannya sesuai karakter bisnis Anda."
         },
         {
-          "title": "AI Mulai Membalas",
-          "desc": "AI otomatis menjawab chat pelanggan, dan tim Anda fokus ke hal yang lebih penting."
+          "title": "Sistem Mulai Membalas",
+          "desc": "Chat pelanggan langsung dijawab otomatis, dan tim Anda bisa fokus ke pekerjaan yang lebih penting."
         }
       ]
     },
@@ -102,17 +102,17 @@
       "title": "Apa Kata Pelanggan Kami",
       "items": [
         {
-          "quote": "Sejak pakai FAiAgent, respons chat WhatsApp kami jadi instan dan penjualan naik signifikan.",
+          "quote": "Dulu chat suka kelewat kalau lagi rame, sekarang otomatis kejawab semua. Closing juga jadi lebih cepat.",
           "name": "Dewi Anggraini",
           "role": "Owner, Toko Fashion Online"
         },
         {
-          "quote": "Tim CS kami jadi jauh lebih efisien karena pertanyaan repetitif sudah dijawab AI.",
+          "quote": "Yang tanya ongkir atau stok doang udah kejawab sendiri. Tim saya jadi bisa fokus ke yang benar-benar butuh dibantu.",
           "name": "Budi Santoso",
           "role": "CS Manager, Startup Logistik"
         },
         {
-          "quote": "Setup-nya mudah, AI-nya cukup pintar memahami konteks pelanggan kami.",
+          "quote": "Awalnya saya kira setup-nya bakal ribet, ternyata gampang. Balasannya juga nyambung sama konteks obrolan sebelumnya.",
           "name": "Rina Putri",
           "role": "Marketing Lead, Klinik Kecantikan"
         }
@@ -178,20 +178,20 @@
   "fitur": {
     "hero": {
       "title": "Fitur AI Agent untuk WhatsApp",
-      "subtitle": "FAiAgent menggabungkan kekuatan AI generatif dengan otomatisasi WhatsApp Business API untuk pengalaman pelanggan terbaik."
+      "subtitle": "FAiAgent menjawab chat WhatsApp pelanggan secara otomatis, sambil tetap terasa seperti tim Anda yang membalas langsung."
     },
     "sections": [
       {
-        "title": "AI yang Memahami Konteks",
-        "desc": "Berbeda dari chatbot berbasis keyword, AI kami memahami maksud dan konteks percakapan pelanggan sehingga balasan terasa natural."
+        "title": "Memahami Konteks, Bukan Cuma Kata Kunci",
+        "desc": "Bukan chatbot yang cuma cocokkan kata kunci — sistem ini mengerti maksud di balik pertanyaan, jadi balasannya nyambung dengan obrolan sebelumnya."
       },
       {
         "title": "Knowledge Base Mudah Diatur",
-        "desc": "Unggah dokumen produk, FAQ, atau katalog Anda. AI otomatis belajar dan menjawab berdasarkan data tersebut."
+        "desc": "Unggah dokumen produk, FAQ, atau katalog Anda. Sistem otomatis belajar dan menjawab berdasarkan data tersebut."
       },
       {
         "title": "Handover Otomatis ke Manusia",
-        "desc": "Ketika AI mendeteksi kebutuhan khusus atau komplain sensitif, percakapan langsung dialihkan ke agent manusia."
+        "desc": "Untuk komplain atau permintaan yang butuh penanganan khusus, percakapan langsung diteruskan ke tim Anda — pelanggan tidak perlu mengulang dari awal."
       },
       {
         "title": "Broadcast Pesan Tersegmentasi",
@@ -282,11 +282,11 @@
   "tentang": {
     "hero": {
       "title": "Tentang FAiAgent",
-      "subtitle": "Kami membangun FAiAgent untuk membantu bisnis Indonesia memberikan layanan pelanggan terbaik melalui WhatsApp dengan kekuatan AI."
+      "subtitle": "FAiAgent dibuat supaya bisnis Indonesia, dari yang baru mulai sampai yang sudah besar, bisa membalas chat pelanggan dengan cepat tanpa harus menambah banyak orang."
     },
     "mission": {
       "title": "Misi Kami",
-      "desc": "Membuat AI chatbot WhatsApp yang mudah digunakan, terjangkau, dan benar-benar membantu bisnis tumbuh, dari UMKM hingga enterprise."
+      "desc": "Membuat chatbot WhatsApp yang gampang dipakai, harganya masuk akal, dan memang membantu bisnis bertumbuh — mulai dari UMKM sampai perusahaan besar."
     },
     "stats": [
       {
@@ -311,7 +311,7 @@
     "formTitle": "Kirim Pesan"
   },
   "footer": {
-    "desc": "FAiAgent adalah platform AI chatbot WhatsApp untuk membantu bisnis Anda melayani pelanggan lebih cepat dan efisien.",
+    "desc": "FAiAgent membantu bisnis membalas chat WhatsApp pelanggan lebih cepat, tanpa menambah beban tim CS.",
     "copyright": "© 2026 FAiAgent. Seluruh hak cipta dilindungi."
   }
 }
