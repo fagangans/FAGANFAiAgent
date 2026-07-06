@@ -10,6 +10,7 @@ const SECTION_LABELS: Record<string, string> = {
   site: "Identitas Situs",
   nav: "Navigasi",
   home: "Halaman Beranda",
+  produk: "Produk & Ekosistem",
   fitur: "Halaman Fitur",
   integrasi: "Halaman Integrasi",
   harga: "Halaman Harga",
@@ -73,14 +74,14 @@ export default function AdminEditor({ initialContent }: { initialContent: SiteCo
             href="/"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-600 hover:border-emerald-300 hover:text-emerald-600"
+            className="rounded-full border border-slate-200 px-4 py-2 text-sm font-medium text-slate-600 hover:border-orange-300 hover:text-orange-600"
           >
             Lihat Website
           </a>
           <button
             onClick={handleSave}
             disabled={saving}
-            className="rounded-full bg-emerald-500 px-5 py-2 text-sm font-semibold text-white hover:bg-emerald-600 disabled:opacity-60"
+            className="rounded-full bg-orange-500 px-5 py-2 text-sm font-semibold text-white hover:bg-orange-600 disabled:opacity-60"
           >
             {saving ? "Menyimpan..." : "Simpan Perubahan"}
           </button>
@@ -94,7 +95,7 @@ export default function AdminEditor({ initialContent }: { initialContent: SiteCo
       </header>
 
       {message && (
-        <div className="mx-6 mt-4 rounded-lg bg-emerald-50 px-4 py-2 text-sm text-emerald-700">{message}</div>
+        <div className="mx-6 mt-4 rounded-lg bg-orange-50 px-4 py-2 text-sm text-orange-700">{message}</div>
       )}
 
       <div className="flex">
@@ -104,7 +105,7 @@ export default function AdminEditor({ initialContent }: { initialContent: SiteCo
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={`mb-1 block w-full rounded-lg px-3 py-2 text-left text-sm font-medium ${
-                activeTab === tab ? "bg-emerald-50 text-emerald-700" : "text-slate-600 hover:bg-slate-50"
+                activeTab === tab ? "bg-orange-50 text-orange-700" : "text-slate-600 hover:bg-slate-50"
               }`}
             >
               {SECTION_LABELS[tab] ?? tab}
@@ -147,14 +148,14 @@ function FieldGroup({
             defaultValue={value}
             rows={3}
             onBlur={(e) => onChange(path, e.target.value)}
-            className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
+            className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none"
           />
         ) : (
           <input
             type="text"
             defaultValue={value}
             onBlur={(e) => onChange(path, e.target.value)}
-            className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
+            className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none"
           />
         )}
       </div>
@@ -171,7 +172,7 @@ function FieldGroup({
           type="text"
           defaultValue={String(value)}
           onBlur={(e) => onChange(path, e.target.value)}
-          className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-emerald-500 focus:outline-none"
+          className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none"
         />
       </div>
     );
@@ -182,7 +183,7 @@ function FieldGroup({
       <div className="space-y-4">
         {value.map((item, idx) => (
           <div key={idx} className="rounded-xl border border-slate-200 bg-white p-4">
-            <p className="mb-2 text-xs font-semibold text-emerald-600">#{idx + 1}</p>
+            <p className="mb-2 text-xs font-semibold text-orange-600">#{idx + 1}</p>
             <FieldGroup value={item} path={[...path, idx]} onChange={onChange} />
           </div>
         ))}

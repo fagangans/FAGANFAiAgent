@@ -9,6 +9,10 @@
   "nav": {
     "links": [
       {
+        "label": "Produk",
+        "href": "/produk"
+      },
+      {
         "label": "Fitur",
         "href": "/fitur"
       },
@@ -119,6 +123,57 @@
       "subtitle": "Coba FAiAgent gratis 14 hari, tanpa kartu kredit.",
       "ctaLabel": "Mulai Sekarang"
     }
+  },
+  "produk": {
+    "hero": {
+      "badge": "Ekosistem FAi Suite",
+      "title": "Satu Ekosistem AI untuk Semua Kebutuhan Bisnis Anda",
+      "subtitle": "Dari chatbot WhatsApp hingga pembuat konten dan riset data — semua produk FAi terhubung dalam satu ekosistem yang saling melengkapi."
+    },
+    "items": [
+      {
+        "name": "FAiAgent",
+        "tag": "Chatbot WhatsApp",
+        "desc": "AI chatbot WhatsApp yang membalas pelanggan otomatis 24/7 dengan bahasa natural.",
+        "url": "#",
+        "cta": "Kunjungi"
+      },
+      {
+        "name": "FAiAgent Web",
+        "tag": "Chatbot Website",
+        "desc": "Widget AI chatbot untuk website Anda — jawab pengunjung dan tingkatkan konversi.",
+        "url": "#",
+        "cta": "Kunjungi"
+      },
+      {
+        "name": "FAiScrapper",
+        "tag": "Riset & Data",
+        "desc": "Kumpulkan dan ekstrak data dari berbagai sumber secara otomatis dan terstruktur.",
+        "url": "#",
+        "cta": "Kunjungi"
+      },
+      {
+        "name": "FAicorousel Maker",
+        "tag": "Konten Sosial Media",
+        "desc": "Buat carousel Instagram & LinkedIn yang menarik dalam hitungan menit dengan AI.",
+        "url": "#",
+        "cta": "Kunjungi"
+      },
+      {
+        "name": "FAibelClip",
+        "tag": "Video & Klip",
+        "desc": "Ubah video panjang menjadi klip pendek viral secara otomatis, siap posting.",
+        "url": "#",
+        "cta": "Kunjungi"
+      },
+      {
+        "name": "FAinggris",
+        "tag": "Belajar Bahasa",
+        "desc": "Asisten AI untuk belajar dan berlatih bahasa Inggris kapan saja, di mana saja.",
+        "url": "#",
+        "cta": "Kunjungi"
+      }
+    ]
   },
   "fitur": {
     "hero": {

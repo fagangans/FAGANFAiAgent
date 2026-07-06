@@ -63,6 +63,6 @@ export const CHANNELS: Channel[] = [
   { name: "Instagram", Logo: InstagramLogo, color: "text-[#E1306C]" },
   { name: "Messenger", Logo: MessengerLogo, color: "text-[#0084FF]" },
   { name: "Telegram", Logo: TelegramLogo, color: "text-[#229ED9]" },
-  { name: "Live Chat", Logo: WebChatLogo, color: "text-emerald-600" },
+  { name: "Live Chat", Logo: WebChatLogo, color: "text-orange-600" },
   { name: "Email", Logo: EmailLogo, color: "text-amber-500" },
 ];

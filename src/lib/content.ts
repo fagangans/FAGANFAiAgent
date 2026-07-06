@@ -14,7 +14,9 @@ export async function getContent(): Promise<SiteContent> {
     return defaultContent as SiteContent;
   }
 
-  return data.data as SiteContent;
+  // Merge stored data over defaults so newly added top-level sections
+  // (e.g. "produk") always exist even if the stored row predates them.
+  return { ...defaultContent, ...(data.data as object) } as SiteContent;
 }
 
 export async function saveContent(content: SiteContent): Promise<void> {

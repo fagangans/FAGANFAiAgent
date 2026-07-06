@@ -16,7 +16,7 @@ export default function Navbar({ content }: { content: SiteContent }) {
     <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2 text-xl font-bold text-slate-900">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500 text-white">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-500 text-white">
             F
           </span>
           {content.site.name}
@@ -30,8 +30,8 @@ export default function Navbar({ content }: { content: SiteContent }) {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`text-sm font-medium transition hover:text-emerald-600 ${
-                  isActive ? "text-emerald-600" : "text-slate-600"
+                className={`text-sm font-medium transition hover:text-orange-600 ${
+                  isActive ? "text-orange-600" : "text-slate-600"
                 }`}
               >
                 {link.label}
@@ -43,7 +43,7 @@ export default function Navbar({ content }: { content: SiteContent }) {
         <div className="flex items-center gap-3">
           <Link
             href="/kontak"
-            className="hidden rounded-full bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600 sm:inline-block"
+            className="hidden rounded-full bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-600 sm:inline-block"
           >
             {content.nav.ctaLabel}
           </Link>
@@ -72,7 +72,7 @@ export default function Navbar({ content }: { content: SiteContent }) {
                   onClick={() => setOpen(false)}
                   aria-current={isActive ? "page" : undefined}
                   className={`rounded-lg px-3 py-2.5 text-sm font-medium transition ${
-                    isActive ? "bg-emerald-50 text-emerald-600" : "text-slate-600 hover:bg-slate-50"
+                    isActive ? "bg-orange-50 text-orange-600" : "text-slate-600 hover:bg-slate-50"
                   }`}
                 >
                   {link.label}
@@ -82,7 +82,7 @@ export default function Navbar({ content }: { content: SiteContent }) {
             <Link
               href="/kontak"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-emerald-500 px-5 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600"
+              className="mt-2 rounded-full bg-orange-500 px-5 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-orange-600"
             >
               {content.nav.ctaLabel}
             </Link>

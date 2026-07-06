@@ -10,10 +10,10 @@ export default async function FiturPage() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white py-20">
+      <section className="relative overflow-hidden bg-gradient-to-b from-orange-50 to-white py-20">
         <div
           aria-hidden
-          className="animate-drift absolute -right-20 top-0 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl"
+          className="animate-drift absolute -right-20 top-0 h-64 w-64 rounded-full bg-orange-200/40 blur-3xl"
         />
         <div className="relative mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-2 lg:items-center">
           <Reveal>
@@ -23,7 +23,7 @@ export default async function FiturPage() {
             </div>
           </Reveal>
           <Reveal delay={150}>
-            <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-50 to-teal-50 p-4">
+            <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-orange-50 to-amber-50 p-4">
               <AiReplyIllustration className="h-56 w-full" />
             </div>
           </Reveal>
@@ -36,8 +36,8 @@ export default async function FiturPage() {
             const Icon = iconForIndex(idx);
             return (
               <Reveal key={section.title} delay={idx * 80}>
-                <div className="flex flex-col gap-6 rounded-2xl border border-slate-100 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-emerald-200 hover:shadow-lg md:flex-row md:items-center">
-                  <div className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-emerald-500 text-white">
+                <div className="flex flex-col gap-6 rounded-2xl border border-slate-100 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-lg md:flex-row md:items-center">
+                  <div className="flex h-12 w-12 flex-none items-center justify-center rounded-xl bg-orange-500 text-white">
                     <Icon className="h-6 w-6" />
                   </div>
                   <div>
@@ -51,13 +51,13 @@ export default async function FiturPage() {
         </div>
       </section>
 
-      <section className="bg-emerald-500 py-14">
+      <section className="bg-orange-500 py-14">
         <Reveal>
           <div className="mx-auto max-w-2xl px-6 text-center">
             <h2 className="text-2xl font-bold text-white">Coba semua fitur ini sekarang</h2>
             <Link
               href="/kontak"
-              className="mt-6 inline-block rounded-full bg-white px-7 py-3 text-base font-semibold text-emerald-600 shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-emerald-50 hover:shadow-lg"
+              className="mt-6 inline-block rounded-full bg-white px-7 py-3 text-base font-semibold text-orange-600 shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-orange-50 hover:shadow-lg"
             >
               Mulai Gratis
             </Link>

@@ -8,16 +8,16 @@ export default function DashboardMock() {
       <div className="flex items-center gap-1.5 border-b border-slate-100 pb-3">
         <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
         <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
-        <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
+        <span className="h-2.5 w-2.5 rounded-full bg-orange-400" />
         <span className="ml-3 text-xs font-medium text-slate-400">FAiAgent Dashboard</span>
       </div>
 
       {/* metric cards */}
       <div className="mt-4 grid grid-cols-3 gap-3">
         {[
-          { label: "Chat Masuk", value: "1.284", tone: "text-emerald-600" },
-          { label: "Dibalas AI", value: "97%", tone: "text-teal-600" },
-          { label: "Konversi", value: "+34%", tone: "text-emerald-600" },
+          { label: "Chat Masuk", value: "1.284", tone: "text-orange-600" },
+          { label: "Dibalas AI", value: "97%", tone: "text-amber-600" },
+          { label: "Konversi", value: "+34%", tone: "text-orange-600" },
         ].map((m) => (
           <div key={m.label} className="rounded-xl bg-slate-50 p-3">
             <p className="text-[10px] font-medium text-slate-400">{m.label}</p>
@@ -30,7 +30,7 @@ export default function DashboardMock() {
       <div className="mt-4 rounded-xl border border-slate-100 p-4">
         <div className="flex items-center justify-between">
           <p className="text-xs font-semibold text-slate-700">Percakapan Minggu Ini</p>
-          <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-medium text-emerald-600">
+          <span className="rounded-full bg-orange-50 px-2 py-0.5 text-[10px] font-medium text-orange-600">
             Live
           </span>
         </div>
@@ -38,7 +38,7 @@ export default function DashboardMock() {
           {bars.map((h, i) => (
             <div key={i} className="flex flex-1 flex-col items-center gap-1">
               <div
-                className="w-full rounded-t-md bg-gradient-to-t from-emerald-500 to-teal-400"
+                className="w-full rounded-t-md bg-gradient-to-t from-orange-500 to-amber-400"
                 style={{ height: `${h}%` }}
               />
               <span className="text-[9px] text-slate-400">{days[i]}</span>

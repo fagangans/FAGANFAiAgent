@@ -8,10 +8,10 @@ export default async function TentangPage() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white py-20">
+      <section className="relative overflow-hidden bg-gradient-to-b from-orange-50 to-white py-20">
         <div
           aria-hidden
-          className="animate-drift absolute -left-20 top-4 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl"
+          className="animate-drift absolute -left-20 top-4 h-64 w-64 rounded-full bg-orange-200/40 blur-3xl"
         />
         <Reveal>
           <div className="relative mx-auto max-w-3xl px-6 text-center">
@@ -30,7 +30,7 @@ export default async function TentangPage() {
             </div>
           </Reveal>
           <Reveal delay={150}>
-            <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-50 to-teal-50 p-4">
+            <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-orange-50 to-amber-50 p-4">
               <GrowthIllustration className="h-56 w-full" />
             </div>
           </Reveal>
@@ -40,7 +40,7 @@ export default async function TentangPage() {
           {stats.map((stat, idx) => (
             <Reveal key={stat.label} delay={idx * 100}>
               <div className="text-center">
-                <p className="text-3xl font-bold text-emerald-600">{stat.value}</p>
+                <p className="text-3xl font-bold text-orange-600">{stat.value}</p>
                 <p className="mt-1 text-sm text-slate-500">{stat.label}</p>
               </div>
             </Reveal>

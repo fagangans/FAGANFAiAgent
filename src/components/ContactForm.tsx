@@ -12,9 +12,9 @@ export default function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-8 text-center">
-        <p className="text-lg font-semibold text-emerald-700">Terima kasih!</p>
-        <p className="mt-2 text-sm text-emerald-600">
+      <div className="rounded-2xl border border-orange-200 bg-orange-50 p-8 text-center">
+        <p className="text-lg font-semibold text-orange-700">Terima kasih!</p>
+        <p className="mt-2 text-sm text-orange-600">
           Pesan Anda telah terkirim. Tim kami akan menghubungi Anda segera.
         </p>
       </div>
@@ -32,7 +32,7 @@ export default function ContactForm() {
           name="name"
           type="text"
           required
-          className="mt-1 w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm focus:border-emerald-500 focus:outline-none"
+          className="mt-1 w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm focus:border-orange-500 focus:outline-none"
           placeholder="Nama lengkap Anda"
         />
       </div>
@@ -46,7 +46,7 @@ export default function ContactForm() {
           name="email"
           type="email"
           required
-          className="mt-1 w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm focus:border-emerald-500 focus:outline-none"
+          className="mt-1 w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm focus:border-orange-500 focus:outline-none"
           placeholder="nama@email.com"
         />
       </div>
@@ -60,14 +60,14 @@ export default function ContactForm() {
           name="message"
           required
           rows={4}
-          className="mt-1 w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm focus:border-emerald-500 focus:outline-none"
+          className="mt-1 w-full rounded-lg border border-slate-200 px-4 py-2.5 text-sm focus:border-orange-500 focus:outline-none"
           placeholder="Ceritakan kebutuhan bisnis Anda"
         />
       </div>
 
       <button
         type="submit"
-        className="w-full rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600"
+        className="w-full rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-600"
       >
         Kirim Pesan
       </button>

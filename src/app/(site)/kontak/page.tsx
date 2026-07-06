@@ -7,10 +7,10 @@ export default async function KontakPage() {
   const { hero } = content.kontak;
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white py-20">
+    <section className="relative overflow-hidden bg-gradient-to-b from-orange-50 to-white py-20">
       <div
         aria-hidden
-        className="animate-float-slow absolute -right-20 top-0 h-64 w-64 rounded-full bg-emerald-200/40 blur-3xl"
+        className="animate-float-slow absolute -right-20 top-0 h-64 w-64 rounded-full bg-orange-200/40 blur-3xl"
       />
       <Reveal>
         <div className="relative mx-auto max-w-2xl px-6 text-center">
