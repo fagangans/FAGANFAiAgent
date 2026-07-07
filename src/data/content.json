@@ -300,11 +300,11 @@
   "tentang": {
     "hero": {
       "title": "Tentang FAiAgent",
-      "subtitle": "FAiAgent dibuat supaya bisnis Indonesia, dari yang baru mulai sampai yang sudah besar, bisa membalas chat pelanggan dengan cepat tanpa harus menambah banyak orang."
+      "subtitle": "FAiAgent dibuat supaya bisnis Indonesia, dari yang baru mulai sampai yang sudah besar, punya satu tempat untuk semua kebutuhan AI-nya — membalas chat pelanggan di WhatsApp dan website, mengolah data, sampai membuat konten sosial media — tanpa harus menambah banyak orang."
     },
     "mission": {
       "title": "Misi Kami",
-      "desc": "Membuat chatbot WhatsApp yang gampang dipakai, harganya masuk akal, dan memang membantu bisnis bertumbuh — mulai dari UMKM sampai perusahaan besar."
+      "desc": "Membangun kumpulan tools AI yang gampang dipakai dan harganya masuk akal, supaya bisnis Indonesia bisa membalas pelanggan lebih cepat, mengolah data lebih rapi, dan membuat konten lebih banyak — dari chatbot WhatsApp & website (FAiAgent), riset data (FAiScrapper), konten sosial media (FAicorousel Maker, FAibelClip), sampai belajar bahasa Inggris (FAinggris). Semua dalam satu ekosistem, mulai dari UMKM sampai perusahaan besar."
     },
     "stats": [
       {
