@@ -15,7 +15,13 @@ export async function PUT(request: NextRequest) {
   }
 
   const body = await request.json();
-  await saveContent(body);
+
+  try {
+    await saveContent(body);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Gagal menyimpan konten.";
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 
   revalidatePath("/", "layout");
 

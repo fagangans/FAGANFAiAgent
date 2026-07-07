@@ -26,6 +26,7 @@ export default function AdminEditor({ initialContent }: { initialContent: SiteCo
   const [activeTab, setActiveTab] = useState<string>(Object.keys(initialContent)[0]);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
+  const [messageIsError, setMessageIsError] = useState(false);
 
   function updateValue(path: (string | number)[], value: string) {
     setContent((prev) => {
@@ -44,6 +45,7 @@ export default function AdminEditor({ initialContent }: { initialContent: SiteCo
   async function handleSave() {
     setSaving(true);
     setMessage("");
+    setMessageIsError(false);
 
     const res = await fetch("/api/content", {
       method: "PUT",
@@ -52,7 +54,19 @@ export default function AdminEditor({ initialContent }: { initialContent: SiteCo
     });
 
     setSaving(false);
-    setMessage(res.ok ? "Tersimpan! Perubahan langsung tampil di website." : "Gagal menyimpan, coba lagi.");
+
+    if (res.ok) {
+      setMessage("Tersimpan! Perubahan langsung tampil di website.");
+      return;
+    }
+
+    const body = await res.json().catch(() => null);
+    setMessageIsError(true);
+    setMessage(
+      res.status === 401
+        ? "Sesi login habis, silakan login ulang."
+        : `Gagal menyimpan: ${body?.error ?? "terjadi kesalahan tidak diketahui."}`
+    );
   }
 
   async function handleLogout() {
@@ -96,7 +110,13 @@ export default function AdminEditor({ initialContent }: { initialContent: SiteCo
       </header>
 
       {message && (
-        <div className="mx-6 mt-4 rounded-lg bg-orange-50 px-4 py-2 text-sm text-orange-700">{message}</div>
+        <div
+          className={`mx-6 mt-4 rounded-lg px-4 py-2 text-sm ${
+            messageIsError ? "bg-red-50 text-red-700" : "bg-orange-50 text-orange-700"
+          }`}
+        >
+          {message}
+        </div>
       )}
 
       <div className="flex">
