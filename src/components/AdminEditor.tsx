@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import type { SiteContent } from "@/lib/content";
+import PreviewPane from "@/components/admin/PreviewPane";
 
 type JsonValue = string | number | boolean | JsonValue[] | { [key: string]: JsonValue };
 
@@ -113,12 +114,17 @@ export default function AdminEditor({ initialContent }: { initialContent: SiteCo
           ))}
         </nav>
 
-        <main className="flex-1 p-6">
-          <FieldGroup
-            value={(content as unknown as Record<string, JsonValue>)[activeTab]}
-            path={[activeTab]}
-            onChange={updateValue}
-          />
+        <main className="grid flex-1 gap-6 p-6 lg:grid-cols-2">
+          <div>
+            <FieldGroup
+              value={(content as unknown as Record<string, JsonValue>)[activeTab]}
+              path={[activeTab]}
+              onChange={updateValue}
+            />
+          </div>
+          <div className="lg:sticky lg:top-6 lg:self-start">
+            <PreviewPane content={content} activeTab={activeTab} />
+          </div>
         </main>
       </div>
     </div>
@@ -145,16 +151,16 @@ function FieldGroup({
         </label>
         {isLong ? (
           <textarea
-            defaultValue={value}
+            value={value}
             rows={3}
-            onBlur={(e) => onChange(path, e.target.value)}
+            onChange={(e) => onChange(path, e.target.value)}
             className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none"
           />
         ) : (
           <input
             type="text"
-            defaultValue={value}
-            onBlur={(e) => onChange(path, e.target.value)}
+            value={value}
+            onChange={(e) => onChange(path, e.target.value)}
             className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none"
           />
         )}
@@ -170,8 +176,8 @@ function FieldGroup({
         </label>
         <input
           type="text"
-          defaultValue={String(value)}
-          onBlur={(e) => onChange(path, e.target.value)}
+          value={String(value)}
+          onChange={(e) => onChange(path, e.target.value)}
           className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-orange-500 focus:outline-none"
         />
       </div>
