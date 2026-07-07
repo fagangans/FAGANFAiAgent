@@ -172,6 +172,13 @@
         "desc": "Asisten AI untuk belajar dan berlatih bahasa Inggris kapan saja, di mana saja.",
         "url": "#",
         "cta": "Kunjungi"
+      },
+      {
+        "name": "FAiAudit",
+        "tag": "Audit Sales Otomatis",
+        "desc": "AI yang mengaudit performa sales bisnis Anda secara otomatis dan terjadwal, lalu mengirim laporannya langsung ke WhatsApp owner setiap hari.",
+        "url": "https://audit.faiagent.my.id",
+        "cta": "Kunjungi"
       }
     ]
   },
