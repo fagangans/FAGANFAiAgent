@@ -7,6 +7,9 @@ import { iconForIndex, CheckIcon } from "@/components/icons";
 import { CHANNELS } from "@/components/BrandLogos";
 import { STEP_ILLUSTRATIONS, AiReplyIllustration } from "@/components/Illustrations";
 import ProductGrid from "@/components/ProductGrid";
+import AuditPopupMock from "@/components/AuditPopupMock";
+
+const VISIBLE_CHANNEL_NAMES = ["WhatsApp", "Telegram", "Live Chat"];
 
 const showcasePoints = [
   "Balasan kontekstual yang terdengar manusiawi",
@@ -29,6 +32,8 @@ export default async function HomePage() {
   const content = await getContent();
   const { hero, logosTitle, features, howItWorks, testimonials, ctaBanner } = content.home;
   const produk = content.produk;
+  const visibleChannels = CHANNELS.filter((ch) => VISIBLE_CHANNEL_NAMES.includes(ch.name));
+  const auditProduct = produk.items.find((p) => p.name === "FAiAudit");
 
   return (
     <>
@@ -121,28 +126,54 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Channels */}
+      {/* Channels + Ekosistem produk */}
       <section className="mx-auto max-w-7xl px-6 py-20">
-        <Reveal>
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold text-slate-900">Satu AI untuk Semua Channel Chat</h2>
-            <p className="mt-4 text-slate-600">
-              Hubungkan WhatsApp dan kanal favorit pelanggan Anda — semua percakapan dibalas otomatis dari satu tempat.
-            </p>
-          </div>
-        </Reveal>
-
-        <div className="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6">
-          {CHANNELS.map((ch, idx) => (
-            <Reveal key={ch.name} delay={idx * 70}>
-              <div className="group flex flex-col items-center gap-3 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-lg">
-                <span className={`${ch.color} transition duration-300 group-hover:scale-110`}>
-                  <ch.Logo className="h-9 w-9" />
-                </span>
-                <span className="text-sm font-medium text-slate-600">{ch.name}</span>
-              </div>
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div>
+            <Reveal>
+              <span className="inline-block rounded-full bg-orange-100 px-4 py-1 text-sm font-medium text-orange-700">
+                Bukan Cuma Chatbot
+              </span>
             </Reveal>
-          ))}
+            <Reveal delay={80}>
+              <h2 className="mt-5 text-3xl font-bold text-slate-900">
+                Satu Ekosistem AI untuk Seluruh Kebutuhan Bisnis
+              </h2>
+            </Reveal>
+            <Reveal delay={140}>
+              <p className="mt-4 text-slate-600">
+                FAiAgent bukan cuma chatbot WhatsApp. Ada FAiAgent Web untuk website, FAiAudit untuk pantau
+                sales harian, FAiScrapper untuk riset data, sampai FAicorousel Maker & FAibelClip untuk
+                konten — semua dalam satu ekosistem yang saling terhubung.
+              </p>
+            </Reveal>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              {visibleChannels.map((ch, idx) => (
+                <Reveal key={ch.name} delay={200 + idx * 70}>
+                  <div className="group flex items-center gap-2 rounded-full border border-slate-100 bg-white py-2 pl-3 pr-4 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-orange-200 hover:shadow-md">
+                    <span className={`${ch.color} transition duration-300 group-hover:scale-110`}>
+                      <ch.Logo className="h-5 w-5" />
+                    </span>
+                    <span className="text-sm font-medium text-slate-600">{ch.name}</span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal delay={450}>
+              <Link
+                href="/produk"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-orange-500 px-7 py-3 text-base font-semibold text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-orange-600 hover:shadow-lg"
+              >
+                Lihat Semua Produk
+              </Link>
+            </Reveal>
+          </div>
+
+          <Reveal delay={200}>
+            <AuditPopupMock url={auditProduct?.url ?? "/produk"} />
+          </Reveal>
         </div>
       </section>
 
