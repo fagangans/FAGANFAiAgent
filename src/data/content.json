@@ -38,8 +38,8 @@
   "home": {
     "hero": {
       "badge": "Satu Ekosistem AI untuk Bisnis Anda",
-      "title": "Bukan Cuma Chatbot — Satu Ekosistem AI untuk Bisnis Anda",
-      "subtitle": "FAiAgent membalas chat WhatsApp & website pelanggan Anda 24/7, sekaligus terhubung dengan FAiAgent Web, FAiScrapper, FAicorousel Maker, FAibelClip, dan FAiAudit — satu ekosistem AI untuk seluruh kebutuhan bisnis Anda.",
+      "title": "Bukan Cuma Chatbot: Satu Ekosistem AI untuk Bisnis Anda",
+      "subtitle": "FAiAgent membalas chat WhatsApp & website pelanggan Anda 24/7, sekaligus terhubung dengan FAiAgent Web, FAiScrapper, FAicorousel Maker, FAibelClip, dan FAiAudit. Satu ekosistem AI untuk seluruh kebutuhan bisnis Anda.",
       "ctaPrimary": "Mulai Gratis 14 Hari",
       "ctaSecondary": "Lihat Demo",
       "stat1Value": "2.000+",
@@ -52,15 +52,15 @@
     "logosTitle": "Dipercaya oleh tim CS & sales dari berbagai industri",
     "features": {
       "title": "Semua yang Anda Butuhkan dalam Satu Chatbot WhatsApp",
-      "subtitle": "Bukan cuma balas otomatis — sistem yang benar-benar mengerti apa yang pelanggan Anda maksud.",
+      "subtitle": "Bukan cuma balas otomatis, tapi sistem yang benar-benar mengerti apa yang pelanggan Anda maksud.",
       "items": [
         {
           "title": "Balasan yang Terasa Personal",
-          "desc": "Pelanggan bertanya, sistem langsung menjawab sesuai konteks obrolan — bukan template kaku yang itu-itu saja."
+          "desc": "Pelanggan bertanya, sistem langsung menjawab sesuai konteks obrolan, bukan template kaku yang itu-itu saja."
         },
         {
           "title": "Knowledge Base Bisnis",
-          "desc": "Unggah katalog produk, daftar FAQ, atau SOP layanan Anda — jawabannya mengikuti data itu, bukan asal tebak."
+          "desc": "Unggah katalog produk, daftar FAQ, atau SOP layanan Anda, jawabannya mengikuti data itu, bukan asal tebak."
         },
         {
           "title": "Handover ke Agent",
@@ -86,7 +86,7 @@
       "steps": [
         {
           "title": "Hubungkan Nomor WhatsApp",
-          "desc": "Sambungkan nomor WhatsApp Business API Anda ke FAiAgent — prosesnya cuma beberapa menit."
+          "desc": "Sambungkan nomor WhatsApp Business API Anda ke FAiAgent, prosesnya cuma beberapa menit."
         },
         {
           "title": "Masukkan Data Bisnis Anda",
@@ -128,7 +128,7 @@
     "hero": {
       "badge": "Ekosistem FAiAgent",
       "title": "Satu Platform untuk Semua Kebutuhan Bisnis Anda",
-      "subtitle": "Dari membalas chat pelanggan hingga membuat konten dan riset data — produk FAiAgent saling terhubung agar tim Anda kerja lebih cepat, bukan lebih ribet."
+      "subtitle": "Dari membalas chat pelanggan hingga membuat konten dan riset data, produk FAiAgent saling terhubung agar tim Anda kerja lebih cepat, bukan lebih ribet."
     },
     "items": [
       {
@@ -141,7 +141,7 @@
       {
         "name": "FAiAgent Web",
         "tag": "Chatbot Website",
-        "desc": "Widget AI chatbot untuk website Anda — jawab pengunjung dan tingkatkan konversi.",
+        "desc": "Widget AI chatbot untuk website Anda, jawab pengunjung dan tingkatkan konversi.",
         "url": "#",
         "cta": "Kunjungi"
       },
@@ -190,7 +190,7 @@
     "sections": [
       {
         "title": "Memahami Konteks, Bukan Cuma Kata Kunci",
-        "desc": "Bukan chatbot yang cuma cocokkan kata kunci — sistem ini mengerti maksud di balik pertanyaan, jadi balasannya nyambung dengan obrolan sebelumnya."
+        "desc": "Bukan chatbot yang cuma cocokkan kata kunci, tapi sistem ini mengerti maksud di balik pertanyaan, jadi balasannya nyambung dengan obrolan sebelumnya."
       },
       {
         "title": "Knowledge Base Mudah Diatur",
@@ -198,7 +198,7 @@
       },
       {
         "title": "Handover Otomatis ke Manusia",
-        "desc": "Untuk komplain atau permintaan yang butuh penanganan khusus, percakapan langsung diteruskan ke tim Anda — pelanggan tidak perlu mengulang dari awal."
+        "desc": "Untuk komplain atau permintaan yang butuh penanganan khusus, percakapan langsung diteruskan ke tim Anda, pelanggan tidak perlu mengulang dari awal."
       },
       {
         "title": "Broadcast Pesan Tersegmentasi",
@@ -213,7 +213,7 @@
   "integrasi": {
     "hero": {
       "title": "Integrasi Satu Ekosistem AI, Bukan Cuma Chatbot",
-      "subtitle": "FAiAgent terhubung ke WhatsApp dan website Anda sebagai kanal utama, plus produk pendukung seperti FAiScrapper, FAicorousel Maker, FAibelClip, dan FAiAudit — semua saling terintegrasi dalam satu ekosistem."
+      "subtitle": "FAiAgent terhubung ke WhatsApp dan website Anda sebagai kanal utama, plus produk pendukung seperti FAiScrapper, FAicorousel Maker, FAibelClip, dan FAiAudit. Semua saling terintegrasi dalam satu ekosistem."
     },
     "highlights": [
       {
@@ -307,11 +307,11 @@
   "tentang": {
     "hero": {
       "title": "Tentang FAiAgent",
-      "subtitle": "FAiAgent dibuat supaya bisnis Indonesia, dari yang baru mulai sampai yang sudah besar, punya satu tempat untuk semua kebutuhan AI-nya — membalas chat pelanggan di WhatsApp dan website, mengolah data, sampai membuat konten sosial media — tanpa harus menambah banyak orang."
+      "subtitle": "FAiAgent dibuat supaya bisnis Indonesia, dari yang baru mulai sampai yang sudah besar, punya satu tempat untuk semua kebutuhan AI-nya: membalas chat pelanggan di WhatsApp dan website, mengolah data, sampai membuat konten sosial media, tanpa harus menambah banyak orang."
     },
     "mission": {
       "title": "Misi Kami",
-      "desc": "Membangun kumpulan tools AI yang gampang dipakai dan harganya masuk akal, supaya bisnis Indonesia bisa membalas pelanggan lebih cepat, mengolah data lebih rapi, dan membuat konten lebih banyak — dari chatbot WhatsApp & website (FAiAgent), riset data (FAiScrapper), konten sosial media (FAicorousel Maker, FAibelClip), sampai belajar bahasa Inggris (FAinggris). Semua dalam satu ekosistem, mulai dari UMKM sampai perusahaan besar."
+      "desc": "Membangun kumpulan tools AI yang gampang dipakai dan harganya masuk akal, supaya bisnis Indonesia bisa membalas pelanggan lebih cepat, mengolah data lebih rapi, dan membuat konten lebih banyak: dari chatbot WhatsApp & website (FAiAgent), riset data (FAiScrapper), konten sosial media (FAicorousel Maker, FAibelClip), sampai belajar bahasa Inggris (FAinggris). Semua dalam satu ekosistem, mulai dari UMKM sampai perusahaan besar."
     },
     "stats": [
       {

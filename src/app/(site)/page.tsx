@@ -35,6 +35,7 @@ export default async function HomePage() {
   const produk = content.produk;
   const visibleChannels = CHANNELS.filter((ch) => VISIBLE_CHANNEL_NAMES.includes(ch.name));
   const auditProduct = produk.items.find((p) => p.name === "FAiAudit");
+  const waLink = `https://wa.me/${content.site.phone.replace(/[^0-9]/g, "")}`;
 
   return (
     <>
@@ -75,7 +76,9 @@ export default async function HomePage() {
             <Reveal delay={300}>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
                 <Link
-                  href="/kontak"
+                  href={waLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-full bg-orange-500 px-7 py-3 text-base font-semibold text-white shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-orange-600 hover:shadow-lg"
                 >
                   {hero.ctaPrimary}
@@ -145,7 +148,7 @@ export default async function HomePage() {
               <p className="mt-4 text-slate-600">
                 FAiAgent bukan cuma chatbot WhatsApp. Ada FAiAgent Web untuk website, FAiAudit untuk pantau
                 sales harian, FAiScrapper untuk riset data, sampai FAicorousel Maker & FAibelClip untuk
-                konten — semua dalam satu ekosistem yang saling terhubung.
+                konten, semua dalam satu ekosistem yang saling terhubung.
               </p>
             </Reveal>
 
@@ -225,7 +228,7 @@ export default async function HomePage() {
               Membalas Pelanggan 24/7, Secepat Kilat
             </h2>
             <p className="mt-4 text-slate-600">
-              AI memahami maksud pelanggan dan menjawab dengan natural — dari tanya stok, harga, hingga
+              AI memahami maksud pelanggan dan menjawab dengan natural, dari tanya stok, harga, hingga
               membuatkan link pembayaran. Tim Anda cukup fokus pada hal yang benar-benar penting.
             </p>
             <Link
@@ -360,7 +363,9 @@ export default async function HomePage() {
             <h2 className="text-3xl font-bold text-white">{ctaBanner.title}</h2>
             <p className="mt-4 text-orange-50">{ctaBanner.subtitle}</p>
             <Link
-              href="/kontak"
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 inline-block rounded-full bg-white px-7 py-3 text-base font-semibold text-orange-600 shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-orange-50 hover:shadow-lg"
             >
               {ctaBanner.ctaLabel}

@@ -28,6 +28,7 @@ export default function Navbar({ content }: { content: SiteContent }) {
   }, []);
 
   const links = [{ label: "Home", href: "/" }, ...content.nav.links];
+  const waLink = `https://wa.me/${content.site.phone.replace(/[^0-9]/g, "")}`;
 
   return (
     <header className="sticky top-0 z-50 px-0 pt-0 transition-all duration-300 sm:px-4 sm:pt-3">
@@ -65,7 +66,9 @@ export default function Navbar({ content }: { content: SiteContent }) {
 
         <div className="flex items-center gap-3">
           <Link
-            href="/kontak"
+            href={waLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden rounded-full bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-orange-600 sm:inline-block"
           >
             {content.nav.ctaLabel}
@@ -103,7 +106,9 @@ export default function Navbar({ content }: { content: SiteContent }) {
               );
             })}
             <Link
-              href="/kontak"
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-orange-500 px-5 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-orange-600"
             >

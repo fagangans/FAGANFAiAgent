@@ -9,7 +9,7 @@ export default function InlineAIChat({ phone }: { phone: string }) {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: `Halo! 👋 Aku Fai, Customer Service AI dari FAiAgent. Ada yang bisa dibantu? Kalau butuh respons cepat langsung dari tim kami, hubungi ${phone} — atau lanjutkan chat di sini, aku siap bantu 24 jam.`,
+      content: `Halo! 👋 Aku Fai, Customer Service AI dari FAiAgent. Ada yang bisa dibantu? Kalau butuh respons cepat langsung dari tim kami, hubungi ${phone}, atau lanjutkan chat di sini, aku siap bantu 24 jam.`,
     },
   ]);
   const [input, setInput] = useState("");

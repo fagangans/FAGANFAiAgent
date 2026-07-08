@@ -7,6 +7,7 @@ import { AiReplyIllustration } from "@/components/Illustrations";
 export default async function FiturPage() {
   const content = await getContent();
   const { hero, sections } = content.fitur;
+  const waLink = `https://wa.me/${content.site.phone.replace(/[^0-9]/g, "")}`;
 
   return (
     <>
@@ -56,7 +57,9 @@ export default async function FiturPage() {
           <div className="mx-auto max-w-2xl px-6 text-center">
             <h2 className="text-2xl font-bold text-white">Coba semua fitur ini sekarang</h2>
             <Link
-              href="/kontak"
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 inline-block rounded-full bg-white px-7 py-3 text-base font-semibold text-orange-600 shadow-md transition duration-300 hover:-translate-y-0.5 hover:bg-orange-50 hover:shadow-lg"
             >
               Mulai Gratis
