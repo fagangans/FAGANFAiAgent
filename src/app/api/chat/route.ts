@@ -1,6 +1,7 @@
-import Anthropic from "@anthropic-ai/sdk";
 import { getContent } from "@/lib/content";
 import { buildSystemPrompt } from "@/lib/systemPrompt";
+import { askGemini } from "@/lib/gemini";
+import { askOpenRouter } from "@/lib/openrouter";
 
 export const runtime = "nodejs";
 
@@ -26,8 +27,8 @@ function isValidHistory(value: unknown): value is ChatMessage[] {
 }
 
 export async function POST(request: Request) {
-  if (!process.env.ANTHROPIC_API_KEY) {
-    return new Response("Chat AI belum dikonfigurasi (ANTHROPIC_API_KEY belum diisi).", {
+  if (!process.env.GEMINI_API_KEY && !process.env.OPENROUTER_API_KEY) {
+    return new Response("Chat AI belum dikonfigurasi (GEMINI_API_KEY / OPENROUTER_API_KEY belum diisi).", {
       status: 503,
     });
   }
@@ -47,24 +48,17 @@ export async function POST(request: Request) {
   const content = await getContent();
   const system = buildSystemPrompt(content);
 
-  const client = new Anthropic();
-
   const encoder = new TextEncoder();
   const stream = new ReadableStream<Uint8Array>({
     async start(controller) {
       try {
-        const claudeStream = client.messages.stream({
-          model: "claude-opus-4-8",
-          max_tokens: 1024,
-          system,
-          messages,
-        });
-
-        for await (const event of claudeStream) {
-          if (event.type === "content_block_delta" && event.delta.type === "text_delta") {
-            controller.enqueue(encoder.encode(event.delta.text));
-          }
+        let text: string;
+        try {
+          text = await askGemini(system, messages);
+        } catch {
+          text = await askOpenRouter(system, messages);
         }
+        controller.enqueue(encoder.encode(text));
       } catch (error) {
         const message = error instanceof Error ? error.message : "Terjadi kesalahan.";
         controller.enqueue(encoder.encode(`\n\n[Maaf, terjadi gangguan: ${message}]`));
