@@ -1,6 +1,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { getContent } from "@/lib/content";
 import { buildSystemPrompt } from "@/lib/systemPrompt";
+import { ai4chat } from "@/lib/ai4chat";
 
 export const runtime = "nodejs";
 
@@ -26,12 +27,6 @@ function isValidHistory(value: unknown): value is ChatMessage[] {
 }
 
 export async function POST(request: Request) {
-  if (!process.env.ANTHROPIC_API_KEY) {
-    return new Response("Chat AI belum dikonfigurasi (ANTHROPIC_API_KEY belum diisi).", {
-      status: 503,
-    });
-  }
-
   let body: unknown;
   try {
     body = await request.json();
@@ -39,20 +34,33 @@ export async function POST(request: Request) {
     return new Response("Invalid JSON", { status: 400 });
   }
 
-  const messages = (body as { messages?: unknown })?.messages;
-  if (!isValidHistory(messages)) {
+  const rawMessages = (body as { messages?: unknown })?.messages;
+  if (!isValidHistory(rawMessages)) {
     return new Response("Invalid messages", { status: 400 });
   }
+  const messages: ChatMessage[] = rawMessages;
 
   const content = await getContent();
   const system = buildSystemPrompt(content);
 
-  const client = new Anthropic();
-
   const encoder = new TextEncoder();
+
+  async function runAi4ChatFallback(controller: ReadableStreamDefaultController<Uint8Array>) {
+    const lastUserMessage = [...messages].reverse().find((m) => m.role === "user");
+    const prompt = `${system}\n\n${lastUserMessage?.content ?? ""}`.trim();
+    const answer = await ai4chat(prompt);
+    controller.enqueue(encoder.encode(answer));
+  }
+
   const stream = new ReadableStream<Uint8Array>({
     async start(controller) {
       try {
+        if (!process.env.ANTHROPIC_API_KEY) {
+          await runAi4ChatFallback(controller);
+          return;
+        }
+
+        const client = new Anthropic();
         const claudeStream = client.messages.stream({
           model: "claude-opus-4-8",
           max_tokens: 1024,
@@ -65,9 +73,14 @@ export async function POST(request: Request) {
             controller.enqueue(encoder.encode(event.delta.text));
           }
         }
-      } catch (error) {
-        const message = error instanceof Error ? error.message : "Terjadi kesalahan.";
-        controller.enqueue(encoder.encode(`\n\n[Maaf, terjadi gangguan: ${message}]`));
+      } catch {
+        try {
+          await runAi4ChatFallback(controller);
+        } catch (fallbackError) {
+          const message =
+            fallbackError instanceof Error ? fallbackError.message : "Terjadi kesalahan.";
+          controller.enqueue(encoder.encode(`\n\n[Maaf, terjadi gangguan: ${message}]`));
+        }
       } finally {
         controller.close();
       }
