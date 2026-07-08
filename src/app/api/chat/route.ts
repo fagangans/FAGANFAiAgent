@@ -55,14 +55,14 @@ export async function POST(request: Request) {
       try {
         let text: string;
         try {
-          text = await askGemini(system, messages);
+          const prompt = [
+            system,
+            ...messages.map((m) => `${m.role === "user" ? "User" : "Assistant"}: ${m.content}`),
+          ].join("\n\n");
+          text = await ai4chat(prompt);
         } catch {
           try {
-            const prompt = [
-              system,
-              ...messages.map((m) => `${m.role === "user" ? "User" : "Assistant"}: ${m.content}`),
-            ].join("\n\n");
-            text = await ai4chat(prompt);
+            text = await askGemini(system, messages);
           } catch {
             text = await askOpenRouter(system, messages);
           }
