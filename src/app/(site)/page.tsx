@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getContent } from "@/lib/content";
 import Reveal from "@/components/Reveal";
-import ChatMockup from "@/components/ChatMockup";
+import EcosystemHeroMock from "@/components/EcosystemHeroMock";
 import DashboardMock from "@/components/DashboardMock";
 import { iconForIndex, CheckIcon } from "@/components/icons";
 import { CHANNELS } from "@/components/BrandLogos";
@@ -99,7 +99,7 @@ export default async function HomePage() {
           </div>
 
           <Reveal delay={250} className="lg:order-2">
-            <ChatMockup />
+            <EcosystemHeroMock />
           </Reveal>
         </div>
       </section>
