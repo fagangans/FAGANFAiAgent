@@ -1,6 +1,7 @@
 import { getContent } from "@/lib/content";
 import { buildSystemPrompt } from "@/lib/systemPrompt";
 import { askGemini } from "@/lib/gemini";
+import { ai4chat } from "@/lib/ai4chat";
 import { askOpenRouter } from "@/lib/openrouter";
 
 export const runtime = "nodejs";
@@ -56,7 +57,15 @@ export async function POST(request: Request) {
         try {
           text = await askGemini(system, messages);
         } catch {
-          text = await askOpenRouter(system, messages);
+          try {
+            const prompt = [
+              system,
+              ...messages.map((m) => `${m.role === "user" ? "User" : "Assistant"}: ${m.content}`),
+            ].join("\n\n");
+            text = await ai4chat(prompt);
+          } catch {
+            text = await askOpenRouter(system, messages);
+          }
         }
         controller.enqueue(encoder.encode(text));
       } catch (error) {
