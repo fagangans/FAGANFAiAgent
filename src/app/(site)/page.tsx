@@ -5,9 +5,10 @@ import ChatMockup from "@/components/ChatMockup";
 import DashboardMock from "@/components/DashboardMock";
 import { iconForIndex, CheckIcon } from "@/components/icons";
 import { CHANNELS } from "@/components/BrandLogos";
-import { STEP_ILLUSTRATIONS, AiReplyIllustration } from "@/components/Illustrations";
+import { STEP_ILLUSTRATIONS } from "@/components/Illustrations";
 import ProductGrid from "@/components/ProductGrid";
 import AuditPopupMock from "@/components/AuditPopupMock";
+import AiReplyMock from "@/components/AiReplyMock";
 
 const VISIBLE_CHANNEL_NAMES = ["WhatsApp", "Telegram", "Live Chat"];
 
@@ -211,8 +212,8 @@ export default async function HomePage() {
       {/* Showcase — AI reply */}
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
         <Reveal className="lg:order-2">
-          <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-orange-50 to-amber-50 p-6">
-            <AiReplyIllustration className="h-full w-full" />
+          <div className="rounded-3xl bg-gradient-to-br from-orange-50 to-amber-50 p-6">
+            <AiReplyMock />
           </div>
         </Reveal>
         <Reveal delay={150} className="lg:order-1">

@@ -1,20 +1,23 @@
 import { getContent } from "@/lib/content";
 import Reveal from "@/components/Reveal";
-import { InstagramLogo } from "@/components/BrandLogos";
-import { LinkIcon, ChartIcon, CheckIcon } from "@/components/icons";
+import { CheckIcon } from "@/components/icons";
 import ChatMockup from "@/components/ChatMockup";
 import WebWidgetMock from "@/components/WebWidgetMock";
 
-const CHANNEL_VISUALS = [
-  { Logo: InstagramLogo, color: "text-[#E1306C]" },
-  { Logo: LinkIcon, color: "text-orange-600" },
-  { Logo: ChartIcon, color: "text-amber-600" },
+const ACCENTS = [
+  "from-orange-500 to-amber-400",
+  "from-amber-500 to-orange-400",
+  "from-orange-600 to-orange-400",
+  "from-amber-400 to-orange-500",
 ];
 
 export default async function IntegrasiPage() {
   const content = await getContent();
-  const { hero, highlights, channels } = content.integrasi;
+  const { hero, highlights } = content.integrasi;
   const [whatsappHighlight, websiteHighlight] = highlights;
+  const otherProducts = content.produk.items.filter(
+    (p) => !["FAiAgent", "FAiAgent Web", "FAinggris"].includes(p.name)
+  );
 
   return (
     <>
@@ -83,27 +86,37 @@ export default async function IntegrasiPage() {
         </div>
       </section>
 
-      {/* Secondary channels */}
+      {/* Other products in the ecosystem */}
       <section className="mx-auto max-w-5xl px-6 py-16">
         <Reveal>
-          <h2 className="text-center text-2xl font-bold text-slate-900">Integrasi Tambahan</h2>
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-2xl font-bold text-slate-900">Produk Lain dalam Ekosistem FAiAgent</h2>
+            <p className="mt-3 text-slate-600">
+              Selain chatbot WhatsApp dan website, FAiAgent juga terhubung dengan produk berikut.
+            </p>
+          </div>
         </Reveal>
-        <div className="mt-10 grid gap-6 sm:grid-cols-3">
-          {channels.map((channel, idx) => {
-            const visual = CHANNEL_VISUALS[idx % CHANNEL_VISUALS.length];
-            const Icon = visual.Logo;
-            return (
-              <Reveal key={channel.name} delay={idx * 80}>
-                <div className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-lg">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-orange-50 transition duration-300 group-hover:scale-110">
-                    <Icon className={`h-7 w-7 ${visual.color}`} />
-                  </div>
-                  <h3 className="mt-4 text-lg font-semibold text-slate-900">{channel.name}</h3>
-                  <p className="mt-2 text-sm text-slate-600">{channel.desc}</p>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {otherProducts.map((product, idx) => (
+            <Reveal key={product.name} delay={idx * 80}>
+              <a
+                href={product.url || "#"}
+                target={product.url?.startsWith("http") ? "_blank" : undefined}
+                rel={product.url?.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="group flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-lg"
+              >
+                <div
+                  className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${
+                    ACCENTS[idx % ACCENTS.length]
+                  } text-lg font-bold text-white shadow-sm transition duration-300 group-hover:scale-110`}
+                >
+                  {product.name.replace(/^FAi?/i, "").charAt(0).toUpperCase() || "F"}
                 </div>
-              </Reveal>
-            );
-          })}
+                <h3 className="mt-4 text-lg font-semibold text-slate-900">{product.name}</h3>
+                <p className="mt-2 flex-1 text-sm text-slate-600">{product.desc}</p>
+              </a>
+            </Reveal>
+          ))}
         </div>
       </section>
     </>

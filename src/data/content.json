@@ -37,9 +37,9 @@
   },
   "home": {
     "hero": {
-      "badge": "Chatbot WhatsApp, bukan sekadar auto-reply",
-      "title": "Balas Chat WhatsApp Pelanggan dalam Hitungan Detik",
-      "subtitle": "FAiAgent menjawab pertanyaan pelanggan di WhatsApp sepanjang hari, dengan gaya bicara yang masih terasa seperti tim Anda sendiri — bukan robot yang kaku.",
+      "badge": "Satu Ekosistem AI untuk Bisnis Anda",
+      "title": "Bukan Cuma Chatbot — Satu Ekosistem AI untuk Bisnis Anda",
+      "subtitle": "FAiAgent membalas chat WhatsApp & website pelanggan Anda 24/7, sekaligus terhubung dengan FAiAgent Web, FAiScrapper, FAicorousel Maker, FAibelClip, dan FAiAudit — satu ekosistem AI untuk seluruh kebutuhan bisnis Anda.",
       "ctaPrimary": "Mulai Gratis 14 Hari",
       "ctaSecondary": "Lihat Demo",
       "stat1Value": "2.000+",
@@ -212,8 +212,8 @@
   },
   "integrasi": {
     "hero": {
-      "title": "Chatbot untuk WhatsApp dan Website Anda",
-      "subtitle": "Dua kanal utama tempat pelanggan Anda bertanya, satu sistem AI yang sama di belakangnya."
+      "title": "Integrasi Satu Ekosistem AI, Bukan Cuma Chatbot",
+      "subtitle": "FAiAgent terhubung ke WhatsApp dan website Anda sebagai kanal utama, plus produk pendukung seperti FAiScrapper, FAicorousel Maker, FAibelClip, dan FAiAudit — semua saling terintegrasi dalam satu ekosistem."
     },
     "highlights": [
       {
