@@ -3,8 +3,8 @@ export default function AiReplyMock() {
     <div className="animate-float-slow relative mx-auto w-full max-w-sm rounded-[2rem] border border-white/60 bg-white/40 p-2 shadow-2xl backdrop-blur-xl">
       <div className="overflow-hidden rounded-[1.6rem] bg-white/60 backdrop-blur-sm">
         <div className="flex items-center gap-3 bg-gradient-to-r from-orange-500 to-amber-500 px-4 py-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/25 text-base">
-            🤖
+          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/25 text-sm font-bold text-white">
+            F
           </div>
           <div>
             <p className="text-sm font-semibold text-white">FAiAgent AI</p>

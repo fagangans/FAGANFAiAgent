@@ -17,7 +17,7 @@ export default function ChatMockup() {
 
         <div className="flex flex-col gap-2 px-3 py-4">
           <div className="max-w-[80%] rounded-lg rounded-tl-none bg-white px-3 py-2 text-xs text-slate-700 shadow-sm">
-            Halo, kak! Ada yang bisa FAiAgent bantu hari ini? 👋
+            Halo, kak! Ada yang bisa FAiAgent bantu hari ini?
           </div>
           <div className="ml-auto max-w-[80%] rounded-lg rounded-tr-none bg-orange-100 px-3 py-2 text-xs text-slate-700 shadow-sm">
             Stok baju ukuran M masih ada?

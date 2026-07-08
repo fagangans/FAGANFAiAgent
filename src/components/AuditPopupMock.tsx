@@ -1,3 +1,5 @@
+import { ChartIcon } from "./icons";
+
 export default function AuditPopupMock({ url }: { url: string }) {
   return (
     <a
@@ -19,7 +21,10 @@ export default function AuditPopupMock({ url }: { url: string }) {
 
         <div className="space-y-2 px-3 py-4">
           <div className="rounded-lg rounded-tl-none bg-white p-3 shadow-sm">
-            <p className="text-xs font-semibold text-slate-800">📊 Audit Sales Hari Ini</p>
+            <p className="flex items-center gap-1.5 text-xs font-semibold text-slate-800">
+              <ChartIcon className="h-3.5 w-3.5 text-emerald-600" />
+              Audit Sales Hari Ini
+            </p>
             <p className="mt-1 text-[11px] text-slate-600">
               Omzet: <span className="font-semibold text-emerald-600">Rp 12.4jt</span> (+18% dari kemarin)
             </p>
@@ -27,12 +32,12 @@ export default function AuditPopupMock({ url }: { url: string }) {
               Chat masuk: <span className="font-semibold">86</span> · Closing:{" "}
               <span className="font-semibold text-emerald-600">23</span>
             </p>
-            <p className="mt-2 text-[11px] text-slate-500">
-              ⚠️ 3 leads belum di-follow up lebih dari 6 jam.
+            <p className="mt-2 text-[11px] font-medium text-amber-600">
+              Perhatian: 3 leads belum di-follow up lebih dari 6 jam.
             </p>
           </div>
           <div className="ml-auto w-fit rounded-lg rounded-tr-none bg-orange-100 px-3 py-1.5 text-[11px] text-slate-700">
-            Siap, langsung dicek 👍
+            Siap, langsung dicek.
           </div>
         </div>
       </div>
