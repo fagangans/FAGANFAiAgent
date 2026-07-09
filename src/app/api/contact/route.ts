@@ -20,8 +20,8 @@ function isValidBody(value: unknown): value is { name: string; email: string; me
 }
 
 export async function POST(request: Request) {
-  const gmailUser = process.env.GMAIL_USER;
-  const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
+  const gmailUser = process.env.GMAIL_USER?.trim();
+  const gmailAppPassword = process.env.GMAIL_APP_PASSWORD?.trim().replace(/\s+/g, "");
 
   if (!gmailUser || !gmailAppPassword) {
     return new Response("Form kontak belum dikonfigurasi (GMAIL_USER / GMAIL_APP_PASSWORD belum diisi).", {
@@ -57,8 +57,10 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     const detail = error instanceof Error ? error.message : String(error);
-    console.error("Contact form email failed:", detail);
-    return new Response(`Gagal mengirim pesan: ${detail}`, { status: 502 });
+    console.error(
+      `Contact form email failed: ${detail} (GMAIL_USER length: ${gmailUser.length}, app password length: ${gmailAppPassword.length}, expected 16)`
+    );
+    return new Response("Gagal mengirim pesan, coba lagi sebentar.", { status: 502 });
   }
 
   return new Response(JSON.stringify({ ok: true }), {
