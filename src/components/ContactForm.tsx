@@ -3,11 +3,38 @@
 import { useState, type FormEvent } from "react";
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("sent");
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      name: String(data.get("name") ?? ""),
+      email: String(data.get("email") ?? ""),
+      message: String(data.get("message") ?? ""),
+    };
+
+    setStatus("sending");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error(await res.text());
+      }
+
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+      setErrorMessage("Gagal mengirim pesan. Coba lagi sebentar, atau hubungi kami langsung lewat WhatsApp.");
+    }
   }
 
   if (status === "sent") {
@@ -65,11 +92,14 @@ export default function ContactForm() {
         />
       </div>
 
+      {status === "error" && <p className="text-sm text-red-600">{errorMessage}</p>}
+
       <button
         type="submit"
-        className="w-full rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-600"
+        disabled={status === "sending"}
+        className="w-full rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-600 disabled:opacity-60"
       >
-        Kirim Pesan
+        {status === "sending" ? "Mengirim..." : "Kirim Pesan"}
       </button>
     </form>
   );
