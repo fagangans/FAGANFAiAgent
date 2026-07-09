@@ -31,9 +31,14 @@ export default function ContactForm() {
       }
 
       setStatus("sent");
-    } catch {
+    } catch (error) {
       setStatus("error");
-      setErrorMessage("Gagal mengirim pesan. Coba lagi sebentar, atau hubungi kami langsung lewat WhatsApp.");
+      const detail = error instanceof Error ? error.message : "";
+      setErrorMessage(
+        `Gagal mengirim pesan. Coba lagi sebentar, atau hubungi kami langsung lewat WhatsApp.${
+          detail ? ` (Detail: ${detail})` : ""
+        }`
+      );
     }
   }
 

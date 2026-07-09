@@ -55,8 +55,10 @@ export async function POST(request: Request) {
       subject: `Pesan baru dari ${name} (Form Kontak Website)`,
       text: `Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`,
     });
-  } catch {
-    return new Response("Gagal mengirim pesan, coba lagi sebentar.", { status: 502 });
+  } catch (error) {
+    const detail = error instanceof Error ? error.message : String(error);
+    console.error("Contact form email failed:", detail);
+    return new Response(`Gagal mengirim pesan: ${detail}`, { status: 502 });
   }
 
   return new Response(JSON.stringify({ ok: true }), {
