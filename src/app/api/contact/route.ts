@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
@@ -20,11 +20,12 @@ function isValidBody(value: unknown): value is { name: string; email: string; me
 }
 
 export async function POST(request: Request) {
-  const gmailUser = process.env.GMAIL_USER?.trim();
-  const gmailAppPassword = process.env.GMAIL_APP_PASSWORD?.trim().replace(/\s+/g, "");
+  const resendApiKey = process.env.RESEND_API_KEY?.trim();
+  const contactTo = process.env.CONTACT_TO_EMAIL?.trim() || "faiagents7@gmail.com";
+  const from = process.env.RESEND_FROM?.trim() || "FAiAgent Website <onboarding@resend.dev>";
 
-  if (!gmailUser || !gmailAppPassword) {
-    return new Response("Form kontak belum dikonfigurasi (GMAIL_USER / GMAIL_APP_PASSWORD belum diisi).", {
+  if (!resendApiKey) {
+    return new Response("Form kontak belum dikonfigurasi (RESEND_API_KEY belum diisi).", {
       status: 503,
     });
   }
@@ -41,25 +42,21 @@ export async function POST(request: Request) {
   }
 
   const { name, email, message } = body;
-
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: { user: gmailUser, pass: gmailAppPassword },
-  });
+  const resend = new Resend(resendApiKey);
 
   try {
-    await transporter.sendMail({
-      from: `"Form Kontak FAiAgent" <${gmailUser}>`,
-      to: gmailUser,
+    const { error } = await resend.emails.send({
+      from,
+      to: contactTo,
       replyTo: email,
       subject: `Pesan baru dari ${name} (Form Kontak Website)`,
       text: `Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`,
     });
+
+    if (error) throw new Error(error.message);
   } catch (error) {
     const detail = error instanceof Error ? error.message : String(error);
-    console.error(
-      `Contact form email failed: ${detail} (GMAIL_USER length: ${gmailUser.length}, app password length: ${gmailAppPassword.length}, expected 16)`
-    );
+    console.error(`Contact form email failed: ${detail}`);
     return new Response("Gagal mengirim pesan, coba lagi sebentar.", { status: 502 });
   }
 
