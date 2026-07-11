@@ -25,7 +25,14 @@ export default function RootLayout({
       style={{ colorScheme: "light" }}
       className={`${jakartaSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-slate-900">{children}</body>
+      <body className="min-h-full flex flex-col bg-white text-slate-900">
+        {children}
+        <script
+          src="https://audit.faiagent.my.id/pageview-beacon.js"
+          data-site="FAGANFAiAgent"
+          defer
+        ></script>
+      </body>
     </html>
   );
 }
